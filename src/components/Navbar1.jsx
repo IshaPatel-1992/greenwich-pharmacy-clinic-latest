@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import logo from "../assets/logo/greenwich-logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { MdMedicalServices, MdLocalPharmacy } from "react-icons/md";
@@ -6,6 +6,8 @@ import { MdMedicalServices, MdLocalPharmacy } from "react-icons/md";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openSubmenus, setOpenSubmenus] = useState({});
+  const [hoveredMenu, setHoveredMenu] = useState(null);
+  const [hoverTimeout, setHoverTimeout] = useState(null);
 
   const toggleSubmenu = (label) => {
     setOpenSubmenus((prev) => ({
@@ -17,6 +19,22 @@ export default function Navbar() {
   const handleMobileLinkClick = () => {
     setIsOpen(false);
     setOpenSubmenus({});
+  };
+
+  // Delayed submenu open/close handlers to avoid flicker
+  const onMouseEnter = (label) => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+      setHoverTimeout(null);
+    }
+    setHoveredMenu(label);
+  };
+
+  const onMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setHoveredMenu(null);
+    }, 200); // 200ms delay before closing submenu
+    setHoverTimeout(timeout);
   };
 
   const menuItems = [
@@ -62,7 +80,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-30 backdrop-blur-md shadow-md">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <a href="#home" className="flex items-center space-x-4">
           <img
@@ -71,49 +89,83 @@ export default function Navbar() {
             className="h-16 w-auto rounded-xl border-2 border-teal-700 shadow-lg hover:shadow-yellow-400 transition duration-500 hover:scale-105"
           />
           <div className="leading-tight">
-            <div className="text-1xl text-teal-900" style={{ fontFamily: "'Playfair Display', serif" }}>
+            <div
+              className="text-1xl text-teal-900"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
               Greenwich Medical Clinic
             </div>
-            <div className="text-sm text-yellow-600" style={{ fontFamily: "'Great Vibes', cursive" }}>
+            <div
+              className="text-sm text-yellow-600"
+              style={{ fontFamily: "'Great Vibes', cursive" }}
+            >
               & Pharmacy
             </div>
           </div>
         </a>
 
-        <nav className="hidden md:flex space-x-6 text-teal-800 font-semibold" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+        {/* Desktop Nav */}
+        <nav
+          className="hidden md:flex space-x-6 text-teal-800 font-semibold"
+          style={{ fontFamily: "'Montserrat', sans-serif" }}
+        >
           {menuItems.map((item) => (
-            <div key={item.label} className="relative group">
-              <a
-                href={item.href}
-                className={`${item.isCTA ? "bg-yellow-400 text-white px-4 py-2 rounded-full shadow hover:bg-yellow-500" : "hover:text-yellow-400"} transition duration-300 tracking-wide text-lg`}
-              >
-                {item.icon} {item.label}
-              </a>
-              {item.submenu && (
-                <div className="absolute left-0 mt-2 w-[500px] bg-white border rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 z-50 p-4 grid grid-cols-2 gap-4">
-                  {item.submenu.map((sub) => (
-                    <a
-                      key={sub.label}
-                      href={sub.href}
-                      className="block hover:bg-yellow-50 p-2 rounded text-sm text-teal-800"
-                    >
-                      <div className="font-semibold">{sub.label}</div>
-                      <div className="text-xs text-gray-500">{sub.desc}</div>
-                    </a>
-                  ))}
-                </div>
-              )}
+            <div
+              key={item.label}
+              className="relative"
+              onMouseEnter={() => onMouseEnter(item.label)}
+              onMouseLeave={onMouseLeave}
+            >
+              <div>
+                <a
+                  href={item.href}
+                  className={`${
+                    item.isCTA
+                      ? "bg-yellow-400 text-white px-3 py-1 rounded-full shadow hover:bg-yellow-500 text-sm" // smaller button styles here
+                      : "hover:text-yellow-400"
+                  } transition duration-300 tracking-wide text-lg flex items-center`}
+                >
+                  {item.icon} {item.label}
+                </a>
+
+                {item.submenu && hoveredMenu === item.label && (
+                  <div
+                    className="absolute left-0 mt-1 w-[500px] bg-white border rounded-lg shadow-lg z-50 p-4 grid grid-cols-2 gap-4"
+                    // no onMouseLeave here — handled by parent div
+                  >
+                    {item.submenu.map((sub) => (
+                      <a
+                        key={sub.label}
+                        href={sub.href}
+                        className="block hover:bg-yellow-50 p-2 rounded text-sm text-teal-800"
+                        onClick={() => setHoveredMenu(null)} // optional
+                      >
+                        <div className="font-semibold">{sub.label}</div>
+                        <div className="text-xs text-gray-500">{sub.desc}</div>
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </nav>
 
-        <button className="md:hidden text-teal-800 text-2xl focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
+        {/* Mobile Toggle */}
+        <button
+          className="md:hidden text-teal-800 text-2xl focus:outline-none"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle mobile menu"
+        >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
+      {/* Mobile Nav */}
       <nav
-        className={`md:hidden bg-white bg-opacity-95 backdrop-blur-md shadow-lg px-6 pb-6 space-y-4 text-teal-800 font-semibold transition-all duration-300 ease-in-out ${isOpen ? "max-h-screen" : "max-h-0 overflow-hidden"}`}
+        className={`md:hidden bg-white bg-opacity-95 backdrop-blur-md shadow-lg px-6 pb-6 space-y-4 text-teal-800 font-semibold transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-screen" : "max-h-0 overflow-hidden"
+        }`}
         style={{ fontFamily: "'Montserrat', sans-serif" }}
       >
         {menuItems.map((item) => (
@@ -122,24 +174,36 @@ export default function Navbar() {
               <a
                 href={item.href}
                 onClick={handleMobileLinkClick}
-                className={`block py-2 text-lg ${item.isCTA ? "bg-yellow-400 text-white px-4 py-1 rounded-full shadow hover:bg-yellow-500" : "hover:text-yellow-500"}`}
+                className={`block py-2 text-lg ${
+                  item.isCTA
+                    ? "bg-yellow-400 text-white px-4 py-1 rounded-full shadow hover:bg-yellow-500"
+                    : "hover:text-yellow-500"
+                }`}
               >
                 {item.icon} {item.label}
               </a>
               {item.submenu && (
-                <button onClick={() => toggleSubmenu(item.label)} className="text-teal-600 text-sm">
+                <button
+                  onClick={() => toggleSubmenu(item.label)}
+                  className="text-teal-600 text-sm"
+                  aria-expanded={!!openSubmenus[item.label]}
+                  aria-controls={`${item.label}-submenu-mobile`}
+                >
                   {openSubmenus[item.label] ? "▲" : "▼"}
                 </button>
               )}
             </div>
             {item.submenu && openSubmenus[item.label] && (
-              <div className="ml-4 mt-2 border-l border-teal-200 pl-4 space-y-2">
+              <div
+                id={`${item.label}-submenu-mobile`}
+                className="ml-4 mt-2 border-l border-teal-200 pl-4 space-y-2"
+              >
                 {item.submenu.map((sub) => (
                   <a
                     key={sub.label}
                     href={sub.href}
                     onClick={handleMobileLinkClick}
-                    className="block text-sm text-teal-700 hover:text-yellow-500"
+                    className="block text-sm text-teal-800 hover:bg-yellow-50 hover:text-yellow-500 p-2 rounded transition-colors"
                   >
                     <div className="font-medium">{sub.label}</div>
                     <div className="text-xs text-gray-500">{sub.desc}</div>

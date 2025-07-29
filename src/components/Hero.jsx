@@ -1,16 +1,16 @@
 import React from "react";
-import heroImage from '../assets/banners/b7.png'; // Update with your actual path
+// import heroImage from '../assets/banners/b7.png'; // Banner image temporarily commented out
 import { FaStethoscope, FaHeartbeat } from "react-icons/fa";
 import { MdLocalPharmacy } from "react-icons/md";
 
 export default function HeroSection() {
   return (
     <section
-  id="home"
-  className="relative h-[80vh] bg-cover bg-center flex items-center justify-center text-white px-4 pt-24 scroll-mt-24"
-  style={{ backgroundImage: `url(${heroImage})` }}
->
-
+      id="home"
+      className="relative h-[80vh] flex items-center justify-center text-white px-4 pt-24 scroll-mt-24"
+      // style={{ backgroundImage: `url(${heroImage})` }} // Banner image temporarily commented out
+      style={{ backgroundColor: "#2c7a7b" }} // Temporary teal-ish background color
+    >
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-teal-900/40 to-black/60" />
 
@@ -25,7 +25,8 @@ export default function HeroSection() {
           We're here to support your health journey
         </h1>
         <p className="text-lg md:text-xl mb-6 text-white/90 font-light">
-          Compassionate care, expert professionals, and convenient access—all under one roof.
+          Compassionate care, expert professionals, and convenient access—all
+          under one roof.
         </p>
         <a
           href="#contact"
