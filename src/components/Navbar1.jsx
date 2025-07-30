@@ -3,7 +3,7 @@ import logo from "../assets/logo/greenwich-logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { MdMedicalServices, MdLocalPharmacy } from "react-icons/md";
 
-export default function Navbar() {
+export default function Navbar1() {
   const [isOpen, setIsOpen] = useState(false);
   const [openSubmenus, setOpenSubmenus] = useState({});
   const [hoveredMenu, setHoveredMenu] = useState(null);
@@ -59,24 +59,37 @@ export default function Navbar() {
       ],
     },
     {
-      label: "Pharmacy",
-      href: "#pharmacy",
-      icon: <MdLocalPharmacy className="inline mr-2 text-yellow-500" />,
-      submenu: [
-        { label: "Prescription Services", href: "#prescriptions", desc: "Easy prescription fills & renewals" },
-        { label: "Consultation", href: "#consultation", desc: "Talk to our licensed pharmacists" },
-        { label: "Prescribing Pharmacist", href: "#prescribing", desc: "Assess and prescribe medications" },
-        { label: "Compounding", href: "#compounding", desc: "Custom-made medication solutions" },
-        { label: "Direct Insurance Billing", href: "#insurance", desc: "We handle your insurance claims" },
-        { label: "Travel Consultation", href: "#travel-consult", desc: "Vaccines & advice for safe travel" },
-        { label: "Diabetic Supplies", href: "#diabetic-supplies", desc: "Monitoring & support products" },
-        { label: "Vaccination & Flu Shots", href: "#vaccinations", desc: "Seasonal and routine shots" },
-      ],
-    },
-    { label: "Our Team", href: "#team" },
+  label: "Pharmacy",
+  href: "#pharmacy",
+  icon: <MdLocalPharmacy className="inline mr-2 text-yellow-500" />,
+  submenu: [
+  // Clinical Services
+  { label: "Vaccinations & Immunizations", href: "#vaccinations", desc: "Flu shots, travel vaccines & more" },
+  { label: "Injection Services", href: "#injections", desc: "Safe administration of injectable meds" },
+  { label: "Consultation", href: "#consultation", desc: "Private consultations & medication reviews" },
+  { label: "Prescribing Pharmacist", href: "#prescribing", desc: "Walk-in assessment & prescribing" },
+  { label: "OAT (Opioid Agonist Treatment)", href: "#oat", desc: "Supervised opioid dependency treatment" },
+
+  // Specialty Services
+  { label: "Compounding", href: "#compounding", desc: "Custom-made medications for your needs" },
+  { label: "Compliance Packaging", href: "#blister-pack", desc: "Blister packs to simplify medication use" },
+
+  // Travel & Wellness
+  { label: "Travel Health Services", href: "#travel-health", desc: "Travel consults & required immunizations" },
+
+  // Home & Family Support
+  { label: "Home Care Supplies", href: "#home-care", desc: "Mobility aids, incontinence & wound care" },
+  { label: "Breast Pump Rental", href: "#breast-pump", desc: "Rent electric breast pumps hassle-free" },
+
+  // Convenience
+  { label: "Free Local Delivery", href: "#delivery", desc: "Free delivery within Calgary" },
+]
+
+},
+
+    { label: "About Us", href: "#about" },
     { label: "Transfer Prescription", href: "#transfer" },
     { label: "Register Now", href: "#register", isCTA: true },
-    { label: "Careers", href: "#careers" },
   ];
 
   return (

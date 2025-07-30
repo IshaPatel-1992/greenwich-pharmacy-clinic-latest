@@ -1,6 +1,5 @@
+// Homepage About content with bgimg
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
-import aboutImage from "../assets/About/team-pharmasists-doctors.jpg";
 
 export default function About() {
   return (
@@ -8,22 +7,17 @@ export default function About() {
       id="about"
       className="py-24 bg-gradient-to-r from-teal-50 to-white px-6"
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-center gap-16">
-        {/* Image Side */}
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-16">
         <div
-          className="w-full md:w-1/2 rounded-3xl shadow-2xl overflow-hidden max-h-[28rem]"
-          data-aos="fade-right"
+          className="w-full md:w-1/2 rounded-3xl shadow-2xl max-h-[28rem] bg-cover bg-center relative hover:scale-105 transition-transform duration-500"
+          style={{ backgroundImage: `url('/assets/Img1.jpg')` }}
+          aria-label="Greenwich Clinic Pharmacy"
+          role="img"
         >
-          <img
-            src={aboutImage}
-            alt="Greenwich Clinic Pharmacy"
-            className="object-cover w-full h-full rounded-3xl"
-            style={{ minHeight: "20rem" }}
-          />
+          <div className="absolute inset-0 bg-teal-900 bg-opacity-30 rounded-3xl"></div>
         </div>
 
-        {/* Text Content */}
-        <div className="md:w-1/2 flex flex-col justify-center max-w-xl" data-aos="fade-left">
+        <div className="md:w-1/2 flex flex-col justify-center">
           <h2
             className="mb-6 text-teal-900 tracking-tight"
             style={{
@@ -47,7 +41,7 @@ export default function About() {
             </span>
           </h2>
 
-          <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
+          <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed max-w-xl">
             At Greenwich Clinic Pharmacy, we are committed to delivering
             compassionate, personalized care. Whether it’s managing
             prescriptions, providing expert consultations, or offering
@@ -57,17 +51,9 @@ export default function About() {
 
           <a
             href="/about"
-            className="
-              self-start inline-flex items-center gap-2
-              bg-yellow-400 hover:bg-yellow-500
-              text-white font-semibold 
-              px-6 py-3 rounded-full
-              shadow-md hover:shadow-lg 
-              transition duration-300 ease-in-out
-              select-none
-            "
+            className="self-start inline-block bg-yellow-400 hover:bg-yellow-500 text-white font-semibold px-6 py-3 rounded-full shadow-md hover:shadow-lg transition duration-300 ease-in-out"
           >
-            Learn more about us <FaArrowRight />
+            Learn more about us →
           </a>
         </div>
       </div>

@@ -1,16 +1,27 @@
 import React from "react";
-// import heroImage from '../assets/banners/b7.png'; // Banner image temporarily commented out
+import heroVideo from '../assets/videos/3795116439-preview.mp4';
 import { FaStethoscope, FaHeartbeat } from "react-icons/fa";
-import { MdLocalPharmacy } from "react-icons/md";
+import { MdLocalPharmacy, MdMedicalServices } from "react-icons/md";
+import { GiMedicines } from "react-icons/gi";
+import { RiStethoscopeFill } from "react-icons/ri";
 
 export default function HeroSection() {
   return (
     <section
       id="home"
       className="relative h-[80vh] flex items-center justify-center text-white px-4 pt-24 scroll-mt-24"
-      // style={{ backgroundImage: `url(${heroImage})` }} // Banner image temporarily commented out
-      style={{ backgroundColor: "#2c7a7b" }} // Temporary teal-ish background color
     >
+      {/* Video Background */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={heroVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+      />
+
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-teal-900/40 to-black/60" />
 
@@ -24,16 +35,35 @@ export default function HeroSection() {
         <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4 drop-shadow-lg">
           We're here to support your health journey
         </h1>
-        <p className="text-lg md:text-xl mb-6 text-white/90 font-light">
+        <p className="text-lg md:text-xl mb-8 text-white/90 font-light">
           Compassionate care, expert professionals, and convenient access—all
           under one roof.
         </p>
-        <a
-          href="#contact"
-          className="inline-block px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold rounded-full shadow-lg transition duration-300"
-        >
-          Book Appointment
-        </a>
+
+        {/* Button Group */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a
+            href="#medical"
+            className="flex items-center gap-2 px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold rounded-full shadow-lg transition duration-300"
+          >
+            <MdMedicalServices className="text-xl" />
+            Medical Services
+          </a>
+          <a
+            href="#pharmacy"
+            className="flex items-center gap-2 px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold rounded-full shadow-lg transition duration-300"
+          >
+            <GiMedicines className="text-xl" />
+            Pharmacy Services
+          </a>
+          <a
+            href="#medeo"
+            className="flex items-center gap-2 px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold rounded-full shadow-lg transition duration-300"
+          >
+            <RiStethoscopeFill className="text-xl" />
+            Book through Medeo
+          </a>
+        </div>
       </div>
     </section>
   );

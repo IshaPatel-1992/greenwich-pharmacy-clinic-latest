@@ -1,23 +1,27 @@
-import React, { useEffect } from 'react';
-import Navbar1 from './components/Navbar1';
-import Hero from './components/Hero';
-import ContactForm from './components/ContactForm';
-import Footer from './components/Footer';
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-function App() {
+import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import Navbar1 from "./components/Navbar1";
+import Footer from "./components/Footer";
+
+export default function App() {
   useEffect(() => {
-    document.title = 'Greenwich Medical Clinic & Pharmacy';
+    AOS.init({ duration: 800, once: true });
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-teal-300 via-white to-teal-400 font-sans">
+    <Router>
       <Navbar1 />
-      <Hero/>
-      <ContactForm />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        {/* Add more pages here */}
+      </Routes>
       <Footer />
-      {/* Add other sections like About, Team, etc. here */}
-    </div>
+    </Router>
   );
 }
-
-export default App;
