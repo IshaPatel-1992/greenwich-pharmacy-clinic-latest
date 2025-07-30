@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "../assets/logo/greenwich-logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { MdMedicalServices, MdLocalPharmacy } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export default function Navbar1() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,52 +44,152 @@ export default function Navbar1() {
       href: "#medical",
       icon: <MdMedicalServices className="inline mr-2 text-yellow-500" />,
       submenu: [
-        { label: "Family Practice", href: "#family-practice", desc: "Personalized care for all ages" },
-        { label: "Walk-in Clinic", href: "#walk-in", desc: "No appointment? No problem." },
-        { label: "Telemedicine", href: "#telemedicine", desc: "Virtual appointments at your convenience" },
-        { label: "Immunization", href: "#immunization", desc: "Vaccinations for all ages" },
-        { label: "Pap Smear or Pap Test", href: "#pap-smear", desc: "Screening for cervical cancer" },
-        { label: "Treatment for Minor Injuries", href: "#minor-injuries", desc: "Quick care for cuts, burns, and sprains" },
-        { label: "Health Education", href: "#health-education", desc: "Empowering wellness through education" },
-        { label: "Routine Physical Examination", href: "#physical-exam", desc: "Annual checkups & health assessments" },
-        { label: "Medical Notes and Forms", href: "#medical-notes", desc: "Official documentation for schools & work" },
-        { label: "Pregnancy Testing", href: "#pregnancy-test", desc: "Quick and confidential" },
-        { label: "Women's Health", href: "#womens-health", desc: "Comprehensive care for women" },
-        { label: "Treatment for Minor Illness", href: "#minor-illness", desc: "Relief for common symptoms" },
-        { label: "Uninsured Services", href: "#uninsured-services", desc: "Pay-per-use healthcare services" },
+        {
+          label: "Family Practice",
+          href: "#family-practice",
+          desc: "Personalized care for all ages",
+        },
+        {
+          label: "Walk-in Clinic",
+          href: "#walk-in",
+          desc: "No appointment? No problem.",
+        },
+        {
+          label: "Telemedicine",
+          href: "#telemedicine",
+          desc: "Virtual appointments at your convenience",
+        },
+        {
+          label: "Immunization",
+          href: "#immunization",
+          desc: "Vaccinations for all ages",
+        },
+        {
+          label: "Pap Smear or Pap Test",
+          href: "#pap-smear",
+          desc: "Screening for cervical cancer",
+        },
+        {
+          label: "Treatment for Minor Injuries",
+          href: "#minor-injuries",
+          desc: "Quick care for cuts, burns, and sprains",
+        },
+        {
+          label: "Health Education",
+          href: "#health-education",
+          desc: "Empowering wellness through education",
+        },
+        {
+          label: "Routine Physical Examination",
+          href: "#physical-exam",
+          desc: "Annual checkups & health assessments",
+        },
+        {
+          label: "Medical Notes and Forms",
+          href: "#medical-notes",
+          desc: "Official documentation for schools & work",
+        },
+        {
+          label: "Pregnancy Testing",
+          href: "#pregnancy-test",
+          desc: "Quick and confidential",
+        },
+        {
+          label: "Women's Health",
+          href: "#womens-health",
+          desc: "Comprehensive care for women",
+        },
+        {
+          label: "Treatment for Minor Illness",
+          href: "#minor-illness",
+          desc: "Relief for common symptoms",
+        },
+        {
+          label: "Uninsured Services",
+          href: "#uninsured-services",
+          desc: "Pay-per-use healthcare services",
+        },
       ],
     },
     {
-  label: "Pharmacy",
-  href: "#pharmacy",
-  icon: <MdLocalPharmacy className="inline mr-2 text-yellow-500" />,
-  submenu: [
-  // Clinical Services
-  { label: "Vaccinations & Immunizations", href: "#vaccinations", desc: "Flu shots, travel vaccines & more" },
-  { label: "Injection Services", href: "#injections", desc: "Safe administration of injectable meds" },
-  { label: "Consultation", href: "#consultation", desc: "Private consultations & medication reviews" },
-  { label: "Prescribing Pharmacist", href: "#prescribing", desc: "Walk-in assessment & prescribing" },
-  { label: "OAT (Opioid Agonist Treatment)", href: "#oat", desc: "Supervised opioid dependency treatment" },
+      label: "Pharmacy",
+      href: "#pharmacy",
+      icon: <MdLocalPharmacy className="inline mr-2 text-yellow-500" />,
+      submenu: [
+        // Clinical Services
+        {
+          label: "Vaccinations & Immunizations",
+          //href: "#vaccinations",
+          href:"#pharmacy",
+          desc: "Flu shots, travel vaccines & more",
+        },
+        {
+          label: "Injection Services",
+          href: "#injections",
+          desc: "Safe administration of injectable meds",
+        },
+        {
+          label: "Consultation",
+          href: "#consultation",
+          desc: "Private consultations & medication reviews",
+        },
+        {
+          label: "Prescribing Pharmacist",
+          href: "#prescribing",
+          desc: "Walk-in assessment & prescribing",
+        },
+        {
+          label: "OAT (Opioid Agonist Treatment)",
+          href: "#oat",
+          desc: "Supervised opioid dependency treatment",
+        },
 
-  // Specialty Services
-  { label: "Compounding", href: "#compounding", desc: "Custom-made medications for your needs" },
-  { label: "Compliance Packaging", href: "#blister-pack", desc: "Blister packs to simplify medication use" },
+        // Specialty Services
+        {
+          label: "Compounding",
+          href: "#compounding",
+          desc: "Custom-made medications for your needs",
+        },
+        {
+          label: "Compliance Packaging",
+          href: "#blister-pack",
+          desc: "Blister packs to simplify medication use",
+        },
 
-  // Travel & Wellness
-  { label: "Travel Health Services", href: "#travel-health", desc: "Travel consults & required immunizations" },
+        // Travel & Wellness
+        {
+          label: "Travel Health Services",
+          href: "#travel-health",
+          desc: "Travel consults & required immunizations",
+        },
 
-  // Home & Family Support
-  { label: "Home Care Supplies", href: "#home-care", desc: "Mobility aids, incontinence & wound care" },
-  { label: "Breast Pump Rental", href: "#breast-pump", desc: "Rent electric breast pumps hassle-free" },
+        // Home & Family Support
+        {
+          label: "Home Care Supplies",
+          href: "#home-care",
+          desc: "Mobility aids, incontinence & wound care",
+        },
+        {
+          label: "Breast Pump Rental",
+          href: "#breast-pump",
+          desc: "Rent electric breast pumps hassle-free",
+        },
 
-  // Convenience
-  { label: "Free Local Delivery", href: "#delivery", desc: "Free delivery within Calgary" },
-]
-
-},
+        // Convenience
+        {
+          label: "Free Local Delivery",
+          href: "#delivery",
+          desc: "Free delivery within Calgary",
+        },
+      ],
+    },
 
     { label: "About Us", href: "#about" },
     { label: "Transfer Prescription", href: "#transfer" },
+    {
+      label: "Contact Us",
+      href: "#contactus",
+    },
     { label: "Register Now", href: "#register", isCTA: true },
   ];
 

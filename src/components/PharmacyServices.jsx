@@ -22,59 +22,60 @@ const pharmacyServices = [
   {
     title: "Vaccinations & Immunizations",
     icon: <FaSyringe className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
-    description: "Flu shots, travel vaccines & more",
+    description: "Stay protected with flu shots, shingles, pneumonia, and other essential vaccines. We also offer travel-related immunizations for global destinations.",
   },
   {
     title: "Injection Services",
     icon: <FaPrescriptionBottleAlt className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
-    description: "Safe administration of injectable meds",
+    description: "Our trained pharmacists administer injectable medications safely and professionally—no appointment needed for most services.",
   },
   {
     title: "Consultation",
     icon: <FaUserMd className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
-    description: "Private consultations & medication reviews",
+    description: "Receive private medication reviews and health consultations. We'll answer your questions and ensure you're on the right path with your prescriptions.",
   },
   {
     title: "Prescribing Pharmacist",
     icon: <FaStethoscope className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
-    description: "Walk-in assessment & prescribing",
+    description: "Our pharmacists can assess and prescribe medications for minor conditions like UTIs, allergies, cold sores, and more—on the spot.",
   },
   {
     title: "OAT (Opioid Agonist Treatment)",
     icon: <FaNotesMedical className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
-    description: "Supervised opioid dependency treatment",
+    description: "Supportive and discreet care for opioid dependency. We offer supervised medication dispensing and ongoing treatment support.",
   },
   {
     title: "Compounding",
     icon: <FaPills className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
-    description: "Custom-made medications for your needs",
+    description: "Customized medications tailored to your unique needs—ideal for allergies, pediatrics, dermatology, and hormone therapies.",
   },
   {
     title: "Compliance Packaging",
     icon: <FaFilePrescription className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
-    description: "Blister packs to simplify medication use",
+    description: "Simplify your routine with blister packs organized by day and time. Perfect for seniors, caregivers, and those on multiple medications.",
   },
   {
     title: "Travel Health Services",
     icon: <FaPlaneDeparture className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
-    description: "Travel consults & required immunizations",
+    description: "Plan ahead with travel consults, country-specific vaccine recommendations, and prescriptions for travel-related health concerns.",
   },
   {
     title: "Home Care Supplies",
     icon: <FaHome className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
-    description: "Mobility aids, incontinence & wound care",
+    description: "We carry medical equipment and supplies like mobility aids, wound dressings, incontinence products, and daily living essentials.",
   },
   {
     title: "Breast Pump Rental",
     icon: <FaBaby className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
-    description: "Rent electric breast pumps hassle-free",
+    description: "Convenient electric breast pump rentals available by the day, week, or month. Clean, safe, and reliable equipment for new moms.",
   },
   {
     title: "Free Local Delivery",
     icon: <FaTruck className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
-    description: "Free delivery within Calgary",
+    description: "Enjoy the convenience of free same-day prescription delivery within Calgary. Perfect for busy families, seniors, or anyone at home.",
   },
 ];
+
 
 export default function PharmacyServices() {
   return (

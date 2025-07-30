@@ -1,6 +1,6 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
-import aboutImage from "../assets/About/team-pharmasists-doctors.jpg";
+import aboutImage from "../assets/About/Pharmacist-img1.jpg";
 
 export default function About() {
   return (
