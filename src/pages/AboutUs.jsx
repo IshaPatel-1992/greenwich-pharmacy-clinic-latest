@@ -3,6 +3,7 @@ import { FaCapsules, FaTruckMedical, FaComments } from "react-icons/fa6";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import OurTeam from "../components/OurTeam";
+import { HashLink as Link } from "react-router-hash-link";
 
 export default function AboutUs() {
   useEffect(() => {
@@ -13,7 +14,7 @@ export default function AboutUs() {
     <div id="about" className="scroll-mt-28">
       {/* About Section */}
       <section
-  id="about"
+  id="aboutuspg"
   className="py-20 px-6 bg-white text-gray-700 max-w-4xl mx-auto scroll-mt-28"
   data-aos="fade-up"
 >

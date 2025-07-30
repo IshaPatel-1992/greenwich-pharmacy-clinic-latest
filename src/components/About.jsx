@@ -1,6 +1,8 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import aboutImage from "../assets/About/Pharmacist-img1.jpg";
+//import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 
 export default function About() {
   return (
@@ -23,7 +25,10 @@ export default function About() {
         </div>
 
         {/* Text Content */}
-        <div className="md:w-1/2 flex flex-col justify-center max-w-xl" data-aos="fade-left">
+        <div
+          className="md:w-1/2 flex flex-col justify-center max-w-xl"
+          data-aos="fade-left"
+        >
           <h2
             className="mb-6 text-teal-900 tracking-tight"
             style={{
@@ -54,9 +59,9 @@ export default function About() {
             convenient delivery options — your health and comfort are always our
             priority.
           </p>
-
-          <a
-            href="/about"
+          <Link
+            to="/aboutuspg"
+            smooth
             className="
               self-start inline-flex items-center gap-2
               bg-yellow-400 hover:bg-yellow-500
@@ -68,7 +73,7 @@ export default function About() {
             "
           >
             Learn more about us <FaArrowRight />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

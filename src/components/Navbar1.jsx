@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import logo from "../assets/logo/greenwich-logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { MdMedicalServices, MdLocalPharmacy } from "react-icons/md";
-import { Link } from "react-router-dom";
+// Old:
+// import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
+
 
 export default function Navbar1() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,162 +44,185 @@ export default function Navbar1() {
   const menuItems = [
     {
       label: "Medical",
-      href: "#medical",
+      href: "/#medical",
       icon: <MdMedicalServices className="inline mr-2 text-yellow-500" />,
       submenu: [
         {
           label: "Family Practice",
-          href: "#family-practice",
+          //href: "family-practice",
+          href: "/#medical",
           desc: "Personalized care for all ages",
         },
         {
           label: "Walk-in Clinic",
-          href: "#walk-in",
+          //href: "#walk-in",
+          href: "/#medical",
           desc: "No appointment? No problem.",
         },
         {
           label: "Telemedicine",
-          href: "#telemedicine",
+          //href: "#telemedicine",
+          href: "/#medical",
           desc: "Virtual appointments at your convenience",
         },
         {
           label: "Immunization",
-          href: "#immunization",
+          //href: "#immunization",
+          href: "/#medical",
           desc: "Vaccinations for all ages",
         },
         {
           label: "Pap Smear or Pap Test",
-          href: "#pap-smear",
+          //href: "#pap-smear",
+          href: "/#medical",
           desc: "Screening for cervical cancer",
         },
         {
           label: "Treatment for Minor Injuries",
-          href: "#minor-injuries",
+          //href: "#minor-injuries",
+          href: "/#medical",
           desc: "Quick care for cuts, burns, and sprains",
         },
         {
           label: "Health Education",
-          href: "#health-education",
+          //href: "#health-education",
+          href: "/#medical",
           desc: "Empowering wellness through education",
         },
         {
           label: "Routine Physical Examination",
-          href: "#physical-exam",
+          //href: "#physical-exam",
+          href: "/#medical",
           desc: "Annual checkups & health assessments",
         },
         {
           label: "Medical Notes and Forms",
-          href: "#medical-notes",
+          //href: "#medical-notes",
+          href: "/#medical",
           desc: "Official documentation for schools & work",
         },
         {
           label: "Pregnancy Testing",
-          href: "#pregnancy-test",
+          //href: "#pregnancy-test",
+          href: "/#medical",
           desc: "Quick and confidential",
         },
         {
           label: "Women's Health",
-          href: "#womens-health",
+          //href: "#womens-health",
+          href: "/#medical",
           desc: "Comprehensive care for women",
         },
         {
           label: "Treatment for Minor Illness",
-          href: "#minor-illness",
+          //href: "#minor-illness",
+          href: "/#medical",
           desc: "Relief for common symptoms",
         },
         {
           label: "Uninsured Services",
-          href: "#uninsured-services",
+          //href: "#uninsured-services",
+          href: "/#medical",
           desc: "Pay-per-use healthcare services",
         },
       ],
     },
     {
       label: "Pharmacy",
-      href: "#pharmacy",
+      href: "/#pharmacy",
       icon: <MdLocalPharmacy className="inline mr-2 text-yellow-500" />,
       submenu: [
         // Clinical Services
         {
           label: "Vaccinations & Immunizations",
           //href: "#vaccinations",
-          href:"#pharmacy",
+          href: "/#pharmacy",
           desc: "Flu shots, travel vaccines & more",
         },
         {
           label: "Injection Services",
-          href: "#injections",
+          //href: "#injections",
+          href: "/#pharmacy",
           desc: "Safe administration of injectable meds",
         },
         {
           label: "Consultation",
-          href: "#consultation",
+          //href: "#consultation",
+          href: "/#pharmacy",
           desc: "Private consultations & medication reviews",
         },
         {
           label: "Prescribing Pharmacist",
-          href: "#prescribing",
+          //href: "#prescribing",
+          href: "/#pharmacy",
           desc: "Walk-in assessment & prescribing",
         },
         {
           label: "OAT (Opioid Agonist Treatment)",
-          href: "#oat",
+          //href: "#oat",
+          href: "/#pharmacy",
           desc: "Supervised opioid dependency treatment",
         },
 
         // Specialty Services
         {
           label: "Compounding",
-          href: "#compounding",
+          //href: "#compounding",
+          href: "/#pharmacy",
           desc: "Custom-made medications for your needs",
         },
         {
           label: "Compliance Packaging",
-          href: "#blister-pack",
+          //href: "#blister-pack",
+          href: "/#pharmacy",
           desc: "Blister packs to simplify medication use",
         },
 
         // Travel & Wellness
         {
           label: "Travel Health Services",
-          href: "#travel-health",
+          //href: "#travel-health",
+          href: "/#pharmacy",
           desc: "Travel consults & required immunizations",
         },
 
         // Home & Family Support
         {
           label: "Home Care Supplies",
-          href: "#home-care",
+          //href: "#home-care",
+          href: "/#pharmacy",
           desc: "Mobility aids, incontinence & wound care",
         },
         {
           label: "Breast Pump Rental",
-          href: "#breast-pump",
+          //href: "#breast-pump",
+          href: "/#pharmacy",
           desc: "Rent electric breast pumps hassle-free",
         },
 
         // Convenience
         {
           label: "Free Local Delivery",
-          href: "#delivery",
+          //href: "#delivery",
+          href: "/#pharmacy",
           desc: "Free delivery within Calgary",
         },
       ],
     },
 
-    { label: "About Us", href: "#about" },
-    { label: "Transfer Prescription", href: "#transfer" },
+    { label: "About Us", href: "/#about" },
+    { label: "Transfer Prescription", href: "/#transfer" },
     {
       label: "Contact Us",
-      href: "#contactus",
+      href: "/#contactus",
     },
-    { label: "Register Now", href: "#register", isCTA: true },
+    { label: "Register Now", href: "/register", isCTA: true },
   ];
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="#home" className="flex items-center space-x-4">
+        <Link to="/#home" className="flex items-center space-x-4">
           <img
             src={logo}
             alt="Greenwich Logo"
@@ -216,7 +242,7 @@ export default function Navbar1() {
               & Pharmacy
             </div>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav
@@ -231,8 +257,8 @@ export default function Navbar1() {
               onMouseLeave={onMouseLeave}
             >
               <div>
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className={`${
                     item.isCTA
                       ? "bg-yellow-400 text-white px-3 py-1 rounded-full shadow hover:bg-yellow-500 text-sm" // smaller button styles here
@@ -240,7 +266,7 @@ export default function Navbar1() {
                   } transition duration-300 tracking-wide text-lg flex items-center`}
                 >
                   {item.icon} {item.label}
-                </a>
+                </Link>
 
                 {item.submenu && hoveredMenu === item.label && (
                   <div
@@ -248,15 +274,15 @@ export default function Navbar1() {
                     // no onMouseLeave here — handled by parent div
                   >
                     {item.submenu.map((sub) => (
-                      <a
+                      <Link
                         key={sub.label}
-                        href={sub.href}
+                        to={sub.href}
                         className="block hover:bg-yellow-50 p-2 rounded text-sm text-teal-800"
                         onClick={() => setHoveredMenu(null)} // optional
                       >
                         <div className="font-semibold">{sub.label}</div>
                         <div className="text-xs text-gray-500">{sub.desc}</div>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -285,8 +311,8 @@ export default function Navbar1() {
         {menuItems.map((item) => (
           <div key={item.label}>
             <div className="flex justify-between items-center">
-              <a
-                href={item.href}
+              <Link
+                to={item.href}
                 onClick={handleMobileLinkClick}
                 className={`block py-2 text-lg ${
                   item.isCTA
@@ -295,7 +321,7 @@ export default function Navbar1() {
                 }`}
               >
                 {item.icon} {item.label}
-              </a>
+              </Link>
               {item.submenu && (
                 <button
                   onClick={() => toggleSubmenu(item.label)}
@@ -313,15 +339,15 @@ export default function Navbar1() {
                 className="ml-4 mt-2 border-l border-teal-200 pl-4 space-y-2"
               >
                 {item.submenu.map((sub) => (
-                  <a
+                  <Link
                     key={sub.label}
-                    href={sub.href}
+                    to={sub.href}
                     onClick={handleMobileLinkClick}
                     className="block text-sm text-teal-800 hover:bg-yellow-50 hover:text-yellow-500 p-2 rounded transition-colors"
                   >
                     <div className="font-medium">{sub.label}</div>
                     <div className="text-xs text-gray-500">{sub.desc}</div>
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}
