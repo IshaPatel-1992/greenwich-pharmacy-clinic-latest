@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.042e0d08.css",
-    "main.js": "/static/js/main.02ca180d.js",
+    "main.css": "/static/css/main.b0355e5b.css",
+    "main.js": "/static/js/main.07899cdb.js",
     "static/media/3795116439-preview.mp4": "/static/media/3795116439-preview.4354adbc7a4ac1ec682e.mp4",
     "static/media/greenwich-logo.png": "/static/media/greenwich-logo.bb88881df3626ac6726e.png",
-    "static/media/team-pharmasists-doctors.jpg": "/static/media/team-pharmasists-doctors.3bcc5ec616cb235dd47d.jpg",
+    "static/media/Pharmacist-img1.jpg": "/static/media/Pharmacist-img1.dbee798c6b0c1487c84e.jpg",
     "index.html": "/index.html",
-    "main.042e0d08.css.map": "/static/css/main.042e0d08.css.map",
-    "main.02ca180d.js.map": "/static/js/main.02ca180d.js.map"
+    "main.b0355e5b.css.map": "/static/css/main.b0355e5b.css.map",
+    "main.07899cdb.js.map": "/static/js/main.07899cdb.js.map"
   },
   "entrypoints": [
-    "static/css/main.042e0d08.css",
-    "static/js/main.02ca180d.js"
+    "static/css/main.b0355e5b.css",
+    "static/js/main.07899cdb.js"
   ]
 }
