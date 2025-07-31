@@ -5,6 +5,7 @@ import About from "../components/About";
 import MedicalClinicServices from "../components/MedicalClinicServices";
 import PharmacyServices from "../components/PharmacyServices";
 import ContactForm from "../components/ContactForm";
+import ClinicForms from "../components/ClinicForms.jsx";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <MedicalClinicServices />
       <PharmacyServices />
       <ContactForm />
+      <ClinicForms />
     </>
   );
 }

@@ -216,7 +216,7 @@ export default function Navbar1() {
       label: "Contact Us",
       href: "/#contactus",
     },
-    { label: "Register Now", href: "/register", isCTA: true },
+    { label: "Register Now", href: "/#register", isCTA: true },
   ];
 
   return (
