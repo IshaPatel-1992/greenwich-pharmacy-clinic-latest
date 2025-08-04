@@ -1,6 +1,6 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
-import aboutImage from "../assets/About/Pharmacist-img1.jpg";
+import aboutImage from "../assets/About/HomeAboutImg1.jpg";
 //import { Link } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 
@@ -53,11 +53,7 @@ export default function About() {
           </h2>
 
           <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
-            At Greenwich Clinic Pharmacy, we are committed to delivering
-            compassionate, personalized care. Whether it’s managing
-            prescriptions, providing expert consultations, or offering
-            convenient delivery options — your health and comfort are always our
-            priority.
+           At Greenwich Medical Clinic, your health and well-being come first. Our compassionate team of healthcare professionals provides personalized medical care, from routine check-ups to specialized consultations, supporting you every step of the way. Enhancing your care experience, our on-site pharmacy offers expert prescription services and convenient delivery options — all designed with your comfort in mind.
           </p>
           <Link
             to="/aboutuspg"
@@ -72,7 +68,7 @@ export default function About() {
               select-none
             "
           >
-            Learn more about us <FaArrowRight />
+            Our Medical Experts <FaArrowRight />
           </Link>
         </div>
       </div>

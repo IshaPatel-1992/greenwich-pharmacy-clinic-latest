@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { FaCapsules, FaTruckMedical, FaComments } from "react-icons/fa6";
+import { FaStethoscope, FaBriefcaseMedical, FaCapsules } from "react-icons/fa6";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 import OurTeam from "../components/OurTeam";
-import { HashLink as Link } from "react-router-hash-link";
 
 export default function AboutUs() {
   useEffect(() => {
@@ -14,11 +14,10 @@ export default function AboutUs() {
     <div id="about" className="scroll-mt-28">
       {/* About Section */}
       <section
-  id="aboutuspg"
-  className="py-20 px-6 bg-white text-gray-700 max-w-4xl mx-auto scroll-mt-28"
-  data-aos="fade-up"
->
-
+        id="aboutuspg"
+        className="py-20 px-6 bg-white text-gray-700 max-w-4xl mx-auto scroll-mt-28"
+        data-aos="fade-up"
+      >
         <div className="inline-block mb-6 relative">
           <h2 className="text-4xl font-extrabold text-teal-800 relative z-10">
             About Us
@@ -28,28 +27,25 @@ export default function AboutUs() {
 
         <div className="space-y-6 text-base md:text-lg leading-relaxed">
           <p className="flex items-start gap-3">
+            <FaStethoscope className="text-teal-600 mt-1" />
+            At Greenwich Medical Clinic, your health comes first. We provide comprehensive medical care — from routine check-ups to chronic condition management — with a focus on compassion and personalized attention.
+          </p>
+          <p className="flex items-start gap-3">
+            <FaBriefcaseMedical className="text-teal-600 mt-1" />
+            Our experienced healthcare professionals are committed to supporting you at every stage of your health journey.
+          </p>
+          <p className="flex items-start gap-3">
             <FaCapsules className="text-teal-600 mt-1" />
-            At Greenwich Clinic Pharmacy, we are committed to delivering compassionate, personalized care.
-          </p>
-          <p className="flex items-start gap-3">
-            <FaComments className="text-teal-600 mt-1" />
-            Whether it’s managing prescriptions or providing expert consultations — we’ve got you covered.
-          </p>
-          <p className="flex items-start gap-3">
-            <FaTruckMedical className="text-teal-600 mt-1" />
-            We also offer convenient delivery options — because your comfort is our priority.
+            To make your experience seamless, our in-house pharmacy offers prescription services and convenient delivery — all under one roof.
           </p>
         </div>
       </section>
 
       {/* Team Introduction Section */}
-      <section
-        className="bg-white py-12 px-6 text-center"
-        data-aos="fade-up"
-      >
+      <section className="bg-white py-12 px-6 text-center" data-aos="fade-up">
         <h3 className="text-3xl font-bold text-teal-800 mb-4">Meet Our Team</h3>
         <p className="max-w-2xl mx-auto text-gray-600 text-base md:text-lg">
-          Our team of healthcare professionals is dedicated to your well-being. Get to know the friendly faces behind our pharmacy and clinic.
+          Get to know the friendly and professional team behind Greenwich Medical Clinic & Pharmacy — your partners in better health.
         </p>
       </section>
 

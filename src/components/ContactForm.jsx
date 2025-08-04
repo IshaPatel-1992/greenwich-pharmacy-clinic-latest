@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { FaMapMarkerAlt, FaUserMd, FaPills, FaEnvelope } from "react-icons/fa";
 
 export default function ContactForm() {
   const formRef = useRef();
@@ -37,8 +38,8 @@ export default function ContactForm() {
             Get in Touch
           </h2>
           <p className="text-lg text-teal-700">
-            Have questions or want to discuss your clinic and pharmacy needs? Fill
-            out the form below and we’ll respond as soon as possible.
+            Have questions or want to discuss your clinic and pharmacy needs?
+            Fill out the form below and we’ll respond as soon as possible.
           </p>
         </div>
 
@@ -98,26 +99,57 @@ export default function ContactForm() {
 
           {/* Right: Contact Info & Map */}
           <div className="flex-1 mt-12 md:mt-0 bg-white rounded-xl shadow-lg p-8 text-teal-900">
-            <h3 className="text-2xl font-semibold mb-6">Clinic & Pharmacy Contact</h3>
-            <p className="mb-4">
-              <strong>Address:</strong> 109 - 45 Greenbriar Dr NW, Calgary, AB
-            </p>
-            <p className="mb-4">
-              <strong>Phone:</strong>{" "}
-              <a href="tel:+15879439528" className="text-teal-700 hover:underline">
-                (587) 943-9528
-              </a>
-            </p>
-            <p className="mb-6">
-              <strong>Email:</strong>{" "}
-              <a
-                href="mailto:info@greenwichclinic.com"
-                className="text-teal-700 hover:underline"
-              >
-                info@greenwichclinic.com
-              </a>
+            <h3 className="text-2xl font-semibold mb-6">
+              Clinic & Pharmacy Contact
+            </h3>
+
+            <p className="flex items-start gap-3 mb-4">
+              <FaMapMarkerAlt className="text-xl text-teal-700 mt-1" />
+              <span>
+                <strong>Address:</strong>
+                <br />
+                109 - 45 Greenbriar Dr NW, Calgary, AB
+              </span>
             </p>
 
+            <p className="flex items-center gap-3 mb-2">
+              <FaUserMd className="text-xl text-teal-700" />
+              <span>
+                <strong>Clinic Phone:</strong>{" "}
+                <a
+                  href="tel:+15879439528"
+                  className="text-teal-700 hover:underline"
+                >
+                  (587) 943-9528
+                </a>
+              </span>
+            </p>
+
+            <p className="flex items-center gap-3 mb-4">
+              <FaPills className="text-xl text-teal-700" />
+              <span>
+                <strong>Pharmacy Phone:</strong>{" "}
+                <a
+                  href="tel:+15879439526"
+                  className="text-teal-700 hover:underline"
+                >
+                  (587) 943-9526
+                </a>
+              </span>
+            </p>
+
+            <p className="flex items-center gap-3 mb-6">
+              <FaEnvelope className="text-xl text-teal-700" />
+              <span>
+                <strong>Email:</strong>{" "}
+                <a
+                  href="mailto:info@greenwichclinic.com"
+                  className="text-teal-700 hover:underline"
+                >
+                  info@greenwichclinic.com
+                </a>
+              </span>
+            </p>
             <div className="w-full h-64 rounded-md overflow-hidden shadow-inner">
               <iframe
                 title="Greenwich Clinic Location"

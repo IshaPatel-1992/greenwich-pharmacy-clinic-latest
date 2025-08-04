@@ -55,13 +55,13 @@ export default function HeroSection() {
             <GiMedicines className="text-xl" />
             Pharmacy Services
           </a>
-          <a
+          { /* <a
             href="#medeo"
             className="flex items-center gap-2 px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold rounded-full shadow-lg transition"
           >
             <RiStethoscopeFill className="text-xl" />
             Book through Medeo
-          </a>
+          </a> } */ }
         </div>
       </div>
     </section>
