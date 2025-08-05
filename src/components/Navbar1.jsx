@@ -1,234 +1,92 @@
-import React, { useState } from "react";
-import logo from "../assets/logo/greenwich-logo.png";
-import { FaBars, FaTimes } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
 import { MdMedicalServices, MdLocalPharmacy } from "react-icons/md";
-// Old:
-// import { Link } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
+import logo from "../assets/logo/greenwich-logo.png";
 import { HashLink as Link } from "react-router-hash-link";
+
+const menuItems = [
+  {
+    label: "Medical",
+    href: "/#medical",
+    icon: <MdMedicalServices className="inline mr-2 text-yellow-500" />,
+    submenu: [
+      { label: "Family Practice", href: "/#medical", desc: "Personalized care for all ages" },
+      { label: "Walk-in Clinic", href: "/#medical", desc: "No appointment? No problem." },
+      { label: "Telemedicine", href: "/#medical", desc: "Virtual appointments at your convenience" },
+      { label: "Immunization", href: "/#medical", desc: "Vaccinations for all ages" },
+      { label: "Pap Smear or Pap Test", href: "/#medical", desc: "Screening for cervical cancer" },
+      { label: "Treatment for Minor Injuries", href: "/#medical", desc: "Quick care for cuts, burns, and sprains" },
+      { label: "Health Education", href: "/#medical", desc: "Empowering wellness through education" },
+      { label: "Routine Physical Examination", href: "/#medical", desc: "Annual checkups & health assessments" },
+      { label: "Medical Notes and Forms", href: "/#medical", desc: "Official documentation for schools & work" },
+      { label: "Pregnancy Testing", href: "/#medical", desc: "Quick and confidential" },
+      { label: "Women's Health", href: "/#medical", desc: "Comprehensive care for women" },
+      { label: "Treatment for Minor Illness", href: "/#medical", desc: "Relief for common symptoms" },
+      { label: "Uninsured Services", href: "/#medical", desc: "Pay-per-use healthcare services" },
+    ],
+  },
+  {
+    label: "Pharmacy",
+    href: "/#pharmacy",
+    icon: <MdLocalPharmacy className="inline mr-2 text-yellow-500" />,
+    submenu: [
+      { label: "Vaccinations & Immunizations", href: "/#pharmacy", desc: "Flu shots, travel vaccines & more" },
+      { label: "Injection Services", href: "/#pharmacy", desc: "Safe administration of injectable meds" },
+      { label: "Consultation", href: "/#pharmacy", desc: "Private consultations & medication reviews" },
+      { label: "Prescribing Pharmacist", href: "/#pharmacy", desc: "Walk-in assessment & prescribing" },
+      { label: "OAT (Opioid Agonist Treatment)", href: "/#pharmacy", desc: "Supervised opioid dependency treatment" },
+      { label: "Compounding", href: "/#pharmacy", desc: "Custom-made medications for your needs" },
+      { label: "Compliance Packaging", href: "/#pharmacy", desc: "Blister packs to simplify medication use" },
+      { label: "Travel Health Services", href: "/#pharmacy", desc: "Travel consults & required immunizations" },
+      { label: "Home Care Supplies", href: "/#pharmacy", desc: "Mobility aids, incontinence & wound care" },
+      { label: "Breast Pump Rental", href: "/#pharmacy", desc: "Rent electric breast pumps hassle-free" },
+      { label: "Free Local Delivery", href: "/#pharmacy", desc: "Free delivery within Calgary" },
+    ],
+  },
+  { label: "About Us", href: "/#about" },
+  { label: "Transfer Prescription", href: "/#transfer" },
+  { label: "Contact Us", href: "/#contactus" },
+  { label: "Register Now", href: "/#register", isCTA: true },
+];
 
 
 export default function Navbar1() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [openSubmenus, setOpenSubmenus] = useState({});
-  const [hoveredMenu, setHoveredMenu] = useState(null);
-  const [hoverTimeout, setHoverTimeout] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
 
-  const toggleSubmenu = (label) => {
-    setOpenSubmenus((prev) => ({
-      ...prev,
-      [label]: !prev[label],
-    }));
+  // Track which main menu item is open on mobile (null if none)
+  const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolling(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Toggle submenu open/close for mobile
+  const toggleSubmenu = (index) => {
+    setOpenSubmenuIndex(openSubmenuIndex === index ? null : index);
   };
 
-  const handleMobileLinkClick = () => {
-    setIsOpen(false);
-    setOpenSubmenus({});
+  // Close menu and submenu when clicking a link
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setOpenSubmenuIndex(null);
   };
-
-  // Delayed submenu open/close handlers to avoid flicker
-  const onMouseEnter = (label) => {
-    if (hoverTimeout) {
-      clearTimeout(hoverTimeout);
-      setHoverTimeout(null);
-    }
-    setHoveredMenu(label);
-  };
-
-  const onMouseLeave = () => {
-    const timeout = setTimeout(() => {
-      setHoveredMenu(null);
-    }, 200); // 200ms delay before closing submenu
-    setHoverTimeout(timeout);
-  };
-
-  const menuItems = [
-    {
-      label: "Medical",
-      href: "/#medical",
-      icon: <MdMedicalServices className="inline mr-2 text-yellow-500" />,
-      submenu: [
-        {
-          label: "Family Practice",
-          //href: "family-practice",
-          href: "/#medical",
-          desc: "Personalized care for all ages",
-        },
-        {
-          label: "Walk-in Clinic",
-          //href: "#walk-in",
-          href: "/#medical",
-          desc: "No appointment? No problem.",
-        },
-        {
-          label: "Telemedicine",
-          //href: "#telemedicine",
-          href: "/#medical",
-          desc: "Virtual appointments at your convenience",
-        },
-        {
-          label: "Immunization",
-          //href: "#immunization",
-          href: "/#medical",
-          desc: "Vaccinations for all ages",
-        },
-        {
-          label: "Pap Smear or Pap Test",
-          //href: "#pap-smear",
-          href: "/#medical",
-          desc: "Screening for cervical cancer",
-        },
-        {
-          label: "Treatment for Minor Injuries",
-          //href: "#minor-injuries",
-          href: "/#medical",
-          desc: "Quick care for cuts, burns, and sprains",
-        },
-        {
-          label: "Health Education",
-          //href: "#health-education",
-          href: "/#medical",
-          desc: "Empowering wellness through education",
-        },
-        {
-          label: "Routine Physical Examination",
-          //href: "#physical-exam",
-          href: "/#medical",
-          desc: "Annual checkups & health assessments",
-        },
-        {
-          label: "Medical Notes and Forms",
-          //href: "#medical-notes",
-          href: "/#medical",
-          desc: "Official documentation for schools & work",
-        },
-        {
-          label: "Pregnancy Testing",
-          //href: "#pregnancy-test",
-          href: "/#medical",
-          desc: "Quick and confidential",
-        },
-        {
-          label: "Women's Health",
-          //href: "#womens-health",
-          href: "/#medical",
-          desc: "Comprehensive care for women",
-        },
-        {
-          label: "Treatment for Minor Illness",
-          //href: "#minor-illness",
-          href: "/#medical",
-          desc: "Relief for common symptoms",
-        },
-        {
-          label: "Uninsured Services",
-          //href: "#uninsured-services",
-          href: "/#medical",
-          desc: "Pay-per-use healthcare services",
-        },
-      ],
-    },
-    {
-      label: "Pharmacy",
-      href: "/#pharmacy",
-      icon: <MdLocalPharmacy className="inline mr-2 text-yellow-500" />,
-      submenu: [
-        // Clinical Services
-        {
-          label: "Vaccinations & Immunizations",
-          //href: "#vaccinations",
-          href: "/#pharmacy",
-          desc: "Flu shots, travel vaccines & more",
-        },
-        {
-          label: "Injection Services",
-          //href: "#injections",
-          href: "/#pharmacy",
-          desc: "Safe administration of injectable meds",
-        },
-        {
-          label: "Consultation",
-          //href: "#consultation",
-          href: "/#pharmacy",
-          desc: "Private consultations & medication reviews",
-        },
-        {
-          label: "Prescribing Pharmacist",
-          //href: "#prescribing",
-          href: "/#pharmacy",
-          desc: "Walk-in assessment & prescribing",
-        },
-        {
-          label: "OAT (Opioid Agonist Treatment)",
-          //href: "#oat",
-          href: "/#pharmacy",
-          desc: "Supervised opioid dependency treatment",
-        },
-
-        // Specialty Services
-        {
-          label: "Compounding",
-          //href: "#compounding",
-          href: "/#pharmacy",
-          desc: "Custom-made medications for your needs",
-        },
-        {
-          label: "Compliance Packaging",
-          //href: "#blister-pack",
-          href: "/#pharmacy",
-          desc: "Blister packs to simplify medication use",
-        },
-
-        // Travel & Wellness
-        {
-          label: "Travel Health Services",
-          //href: "#travel-health",
-          href: "/#pharmacy",
-          desc: "Travel consults & required immunizations",
-        },
-
-        // Home & Family Support
-        {
-          label: "Home Care Supplies",
-          //href: "#home-care",
-          href: "/#pharmacy",
-          desc: "Mobility aids, incontinence & wound care",
-        },
-        {
-          label: "Breast Pump Rental",
-          //href: "#breast-pump",
-          href: "/#pharmacy",
-          desc: "Rent electric breast pumps hassle-free",
-        },
-
-        // Convenience
-        {
-          label: "Free Local Delivery",
-          //href: "#delivery",
-          href: "/#pharmacy",
-          desc: "Free delivery within Calgary",
-        },
-      ],
-    },
-
-    { label: "About Us", href: "/#about" },
-    { label: "Transfer Prescription", href: "/#transfer" },
-    {
-      label: "Contact Us",
-      href: "/#contactus",
-    },
-    { label: "Register Now", href: "/#register", isCTA: true },
-  ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolling ? "bg-white shadow-md" : "bg-white/90 backdrop-blur-md"}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
         <Link to="/#home" className="flex items-center space-x-4">
           <img
             src={logo}
             alt="Greenwich Logo"
             className="h-16 w-auto rounded-xl border-2 border-teal-700 shadow-lg hover:shadow-yellow-400 transition duration-500 hover:scale-105"
           />
-          <div className="leading-tight">
+        
+        <div className="leading-tight">
             <div
               className="text-1xl text-teal-900"
               style={{ fontFamily: "'Playfair Display', serif" }}
@@ -243,117 +101,104 @@ export default function Navbar1() {
             </div>
           </div>
         </Link>
+        {/* Mobile Icon */}
+        <div className="lg:hidden">
+          <button onClick={() => setMenuOpen(!menuOpen)} className="text-3xl text-teal-800">
+            <GiHamburgerMenu />
+          </button>
+        </div>
 
-        {/* Desktop Nav */}
-        <nav
-          className="hidden md:flex space-x-6 text-teal-800 font-semibold"
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
-        >
+        {/* Desktop Menu (unchanged) */}
+        <nav className="hidden lg:flex items-center space-x-8">
           {menuItems.map((item) => (
-            <div
-              key={item.label}
-              className="relative"
-              onMouseEnter={() => onMouseEnter(item.label)}
-              onMouseLeave={onMouseLeave}
-            >
-              <div>
-                <Link
-                  to={item.href}
-                  className={`${
-                    item.isCTA
-                      ? "bg-yellow-400 text-white px-3 py-1 rounded-full shadow hover:bg-yellow-500 text-sm" // smaller button styles here
-                      : "hover:text-yellow-400"
-                  } transition duration-300 tracking-wide text-lg flex items-center`}
-                >
-                  {item.icon} {item.label}
-                </Link>
+            <div key={item.label} className="relative group">
+              <a
+                href={item.href}
+                className={`text-teal-800 hover:text-yellow-600 font-semibold transition-all ${
+                  item.isCTA ? "bg-yellow-400 px-4 py-2 rounded-full text-white hover:bg-yellow-500" : ""
+                }`}
+              >
+                {item.icon}
+                {item.label}
+              </a>
 
-                {item.submenu && hoveredMenu === item.label && (
-                  <div
-                    className="absolute left-0 mt-1 w-[500px] bg-white border rounded-lg shadow-lg z-50 p-4 grid grid-cols-2 gap-4"
-                    // no onMouseLeave here — handled by parent div
-                  >
+              {item.submenu && (
+                <div
+                  className="absolute left-0 mt-2 w-[600px] max-h-80 overflow-y-auto bg-white shadow-lg border rounded-lg invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50"
+                >
+                  <ul className="grid grid-cols-2 gap-4 p-4">
                     {item.submenu.map((sub) => (
-                      <Link
-                        key={sub.label}
-                        to={sub.href}
-                        className="block hover:bg-yellow-50 p-2 rounded text-sm text-teal-800"
-                        onClick={() => setHoveredMenu(null)} // optional
-                      >
-                        <div className="font-semibold">{sub.label}</div>
-                        <div className="text-xs text-gray-500">{sub.desc}</div>
-                      </Link>
+                      <li key={sub.label} className="border-b last:border-0 pb-2">
+                        <a
+                          href={sub.href}
+                          className="block hover:bg-teal-50 p-2 rounded-md transition"
+                        >
+                          <div className="font-medium text-teal-800">{sub.label}</div>
+                          <div className="text-sm text-gray-500">{sub.desc}</div>
+                        </a>
+                      </li>
                     ))}
-                  </div>
-                )}
-              </div>
+                  </ul>
+                </div>
+              )}
             </div>
           ))}
         </nav>
-
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-teal-800 text-2xl focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle mobile menu"
-        >
-          {isOpen ? <FaTimes /> : <FaBars />}
-        </button>
       </div>
 
-      {/* Mobile Nav */}
-      <nav
-        className={`md:hidden bg-white bg-opacity-95 backdrop-blur-md shadow-lg px-6 pb-6 space-y-4 text-teal-800 font-semibold transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-screen" : "max-h-0 overflow-hidden"
-        }`}
-        style={{ fontFamily: "'Montserrat', sans-serif" }}
-      >
-        {menuItems.map((item) => (
-          <div key={item.label}>
-            <div className="flex justify-between items-center">
-              <Link
-                to={item.href}
-                onClick={handleMobileLinkClick}
-                className={`block py-2 text-lg ${
-                  item.isCTA
-                    ? "bg-yellow-400 text-white px-4 py-1 rounded-full shadow hover:bg-yellow-500"
-                    : "hover:text-yellow-500"
-                }`}
-              >
-                {item.icon} {item.label}
-              </Link>
-              {item.submenu && (
-                <button
-                  onClick={() => toggleSubmenu(item.label)}
-                  className="text-teal-600 text-sm"
-                  aria-expanded={!!openSubmenus[item.label]}
-                  aria-controls={`${item.label}-submenu-mobile`}
-                >
-                  {openSubmenus[item.label] ? "▲" : "▼"}
-                </button>
-              )}
-            </div>
-            {item.submenu && openSubmenus[item.label] && (
-              <div
-                id={`${item.label}-submenu-mobile`}
-                className="ml-4 mt-2 border-l border-teal-200 pl-4 space-y-2"
-              >
-                {item.submenu.map((sub) => (
-                  <Link
-                    key={sub.label}
-                    to={sub.href}
-                    onClick={handleMobileLinkClick}
-                    className="block text-sm text-teal-800 hover:bg-yellow-50 hover:text-yellow-500 p-2 rounded transition-colors"
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="lg:hidden bg-white px-6 pb-6 pt-2 shadow-md">
+          <ul className="space-y-4">
+            {menuItems.map((item, index) => (
+              <div key={item.label}>
+                {/* If has submenu, make clickable to toggle */}
+                {item.submenu ? (
+                  <>
+                    <button
+                      onClick={() => toggleSubmenu(index)}
+                      className={`w-full text-left flex items-center justify-between text-teal-800 text-lg font-semibold ${item.isCTA ? "bg-yellow-400 text-white px-4 py-2 rounded-full hover:bg-yellow-500" : "hover:text-yellow-600"}`}
+                    >
+                      <span className="flex items-center">
+                        {item.icon}
+                        {item.label}
+                      </span>
+                      <span>{openSubmenuIndex === index ? "-" : "+"}</span>
+                    </button>
+
+                    {/* Show submenu only if open */}
+                    {openSubmenuIndex === index && (
+                      <ul className="mt-1 ml-4 space-y-2">
+                        {item.submenu.map((sub) => (
+                          <li key={sub.label}>
+                            <a
+                              href={sub.href}
+                              onClick={closeMenu}
+                              className="block text-sm text-gray-700 hover:text-teal-500"
+                            >
+                              {sub.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                ) : (
+                  // No submenu, just normal link closes menu on click
+                  <a
+                    href={item.href}
+                    onClick={closeMenu}
+                    className={`block text-teal-800 text-lg font-semibold ${item.isCTA ? "bg-yellow-400 text-white px-4 py-2 rounded-full hover:bg-yellow-500" : "hover:text-yellow-600"}`}
                   >
-                    <div className="font-medium">{sub.label}</div>
-                    <div className="text-xs text-gray-500">{sub.desc}</div>
-                  </Link>
-                ))}
+                    {item.icon}
+                    {item.label}
+                  </a>
+                )}
               </div>
-            )}
-          </div>
-        ))}
-      </nav>
+            ))}
+          </ul>
+        </div>
+      )}
     </header>
   );
 }

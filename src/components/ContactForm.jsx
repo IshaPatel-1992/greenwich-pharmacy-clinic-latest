@@ -112,44 +112,48 @@ export default function ContactForm() {
               </span>
             </p>
 
-            <p className="flex items-center gap-3 mb-2">
-              <FaUserMd className="text-xl text-teal-700" />
-              <span>
-                <strong>Clinic Phone:</strong>{" "}
-                <a
-                  href="tel:+15879439528"
-                  className="text-teal-700 hover:underline"
-                >
-                  (587) 943-9528
-                </a>
-              </span>
-            </p>
+           <div className="space-y-4">
+  <p className="flex items-start gap-3">
+    <FaUserMd className="text-xl text-teal-700 mt-1" />
+    <span>
+      <strong>Clinic:</strong>
+      <br />
+      Phone:{" "}
+      <a href="tel:+15879439528" className="text-teal-700 hover:underline">
+        (587) 943-9528
+      </a>
+      <br />
+      Email:{" "}
+      <a
+        href="mailto:info@greenwichhealth.ca"
+        className="text-teal-700 hover:underline"
+      >
+        info@greenwichhealth.ca
+      </a>
+    </span>
+  </p>
 
-            <p className="flex items-center gap-3 mb-4">
-              <FaPills className="text-xl text-teal-700" />
-              <span>
-                <strong>Pharmacy Phone:</strong>{" "}
-                <a
-                  href="tel:+15879439526"
-                  className="text-teal-700 hover:underline"
-                >
-                  (587) 943-9526
-                </a>
-              </span>
-            </p>
+  <p className="flex items-start gap-3">
+    <FaPills className="text-xl text-teal-700 mt-1" />
+    <span>
+      <strong>Pharmacy:</strong>
+      <br />
+      Phone:{" "}
+      <a href="tel:+15879439526" className="text-teal-700 hover:underline">
+        (587) 943-9526
+      </a>
+      <br />
+      Email:{" "}
+      <a
+        href="mailto:pharmacy@greenwichhealth.ca"
+        className="text-teal-700 hover:underline"
+      >
+        pharmacy@greenwichhealth.ca
+      </a>
+    </span>
+  </p>
+</div>
 
-            <p className="flex items-center gap-3 mb-6">
-              <FaEnvelope className="text-xl text-teal-700" />
-              <span>
-                <strong>Email:</strong>{" "}
-                <a
-                  href="mailto:info@greenwichclinic.com"
-                  className="text-teal-700 hover:underline"
-                >
-                  info@greenwichclinic.com
-                </a>
-              </span>
-            </p>
             <div className="w-full h-64 rounded-md overflow-hidden shadow-inner">
               <iframe
                 title="Greenwich Clinic Location"
