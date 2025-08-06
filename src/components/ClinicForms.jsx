@@ -1,37 +1,8 @@
-import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+import React, { useState } from "react";
 import { FaUserPlus, FaCapsules } from "react-icons/fa";
 
 export default function ClinicForms() {
   const [activeTab, setActiveTab] = useState("registration");
-
-  const registerFormRef = useRef();
-  const transferFormRef = useRef();
-
-  const sendEmail = (formRef, templateID, successMsg) => (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "YOUR_SERVICE_ID",
-        templateID,
-        formRef.current,
-        "YOUR_PUBLIC_KEY"
-      )
-      .then(() => {
-        alert(successMsg);
-        formRef.current.reset();
-      })
-      .catch((error) => {
-        alert("Failed to send. Please try again.");
-        console.error(error);
-      });
-  };
-
-  const inputStyle =
-    "w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500";
-  const submitButton =
-    "w-full bg-teal-600 hover:bg-teal-500 text-white font-semibold py-3 rounded-lg transition";
 
   return (
     <section className="py-16 bg-gradient-to-br from-teal-50 via-white to-teal-100 min-h-screen">
@@ -55,151 +26,49 @@ export default function ClinicForms() {
         {/* Form Panels */}
         <div className="bg-white shadow-lg rounded-2xl p-8 space-y-6">
           {activeTab === "registration" && (
-            <>
-            <div id="register"> {/* 👈 Add this */}
+            <div id="register">
               <h2 className="text-2xl font-bold text-teal-800 text-center mb-4">
                 Patient Registration
               </h2>
-              <form
-                ref={registerFormRef}
-                onSubmit={sendEmail(
-                  registerFormRef,
-                  "template_register",
-                  "Registration submitted successfully!"
-                )}
-                className="space-y-6"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <input
-                    name="first_name"
-                    placeholder="First Name"
-                    required
-                    className={inputStyle}
-                  />
-                  <input
-                    name="last_name"
-                    placeholder="Last Name"
-                    required
-                    className={inputStyle}
-                  />
-                  {/* <input name="phone" type="tel" placeholder="Phone Number" required className={inputStyle} /> */}
-                  <input
-                    name="phone"
-                    type="tel"
-                    placeholder="Phone"
-                    required
-                    pattern="\(\d{3}\)-\d{3}-\d{4}"
-                    title="Enter phone in format: (000)-000-0000"
-                    className={inputStyle}
-                  />
-                  {/* <input name="email" type="email" placeholder="Email" required className={inputStyle} /> */}
-                  <input
-                    name="email"
-                    type="email"
-                    placeholder="Email"
-                    required
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                    title="Enter a valid email like: abcdef@gmail.com"
-                    className={inputStyle}
-                  />
-                  <input
-                    name="address"
-                    placeholder="Address"
-                    required
-                    className={inputStyle}
-                  />
-                  <input
-                    name="dob"
-                    type="date"
-                    placeholder="Date of Birth"
-                    required
-                    className={inputStyle}
-                  />
-                  <input
-                    name="family_physician"
-                    placeholder="Current Family Physician"
-                    className={`${inputStyle} md:col-span-2`}
-                  />
-                </div>
-                <button type="submit" className={submitButton}>
-                  Submit Registration
-                </button>
-              </form>
-              </div> {/* 👈 Close the div */}
-            </>
+              <div className="w-full h-[600px]">
+                <iframe
+                  title="Registration Form"
+                  width="100%"
+                  height="100%"
+                  src="https://forms.office.com/Pages/ResponsePage.aspx?id=ZdlrskVmiU6QDTni28A9UknxdGhB-I5Nu8x_qVls8HVUMjRJQ1QySTNOUk9MT1BBR0tMNkU5QzNHTy4u&embed=true"
+                  frameBorder="0"
+                  style={{
+                    border: "none",
+                    maxWidth: "100%",
+                    maxHeight: "100vh",
+                  }}
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
           )}
 
           {activeTab === "transfer" && (
-            <>
-            <div id="transfer"> {/* 👈 Add this */}
+            <div id="transfer">
               <h2 className="text-2xl font-bold text-teal-800 text-center mb-4">
                 Transfer Prescription
               </h2>
-              <form
-                ref={transferFormRef}
-                onSubmit={sendEmail(
-                  transferFormRef,
-                  "template_transfer",
-                  "Transfer request sent successfully!"
-                )}
-                className="space-y-6"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <input
-                    name="first_name"
-                    placeholder="First Name"
-                    required
-                    className={inputStyle}
-                  />
-                  <input
-                    name="last_name"
-                    placeholder="Last Name"
-                    required
-                    className={inputStyle}
-                  />
-                  <input
-                    name="phone"
-                    type="tel"
-                    placeholder="Phone Number"
-                    required
-                    pattern="\(\d{3}\)-\d{3}-\d{4}"
-                    title="Enter phone in format: (000)-000-0000"
-                    className={inputStyle}
-                  />
-                  <input
-                    name="dob"
-                    type="date"
-                    placeholder="Date of Birth"
-                    required
-                    className={inputStyle}
-                  />
-                  <input
-                    name="email"
-                    type="email"
-                    placeholder="Email"
-                    required
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                    title="Enter a valid email like: abcdef@gmail.com"
-                    className={inputStyle}
-                  />
-                  <input
-                    name="address"
-                    placeholder="Address"
-                    required
-                    className={inputStyle}
-                  />
-                  <input
-                    name="medication_name"
-                    placeholder="Name of Medication(s)"
-                    className={`${inputStyle} md:col-span-2`}
-                  />
-                </div>
-                <button type="submit" className={submitButton}>
-                  Submit Transfer
-                </button>
-              </form>
-              </div> {/* 👈 Close the div */}
-            </>
+              <div className="w-full h-[600px]">
+                <iframe
+                  title="Transfer Prescription Form"
+                  width="100%"
+                  height="100%"
+                  src="https://forms.office.com/Pages/ResponsePage.aspx?id=ZdlrskVmiU6QDTni28A9UknxdGhB-I5Nu8x_qVls8HVUN0JTM1NSVkJYQ1NYODc2V1lCWEUwQzJKNS4u&embed=true"
+                  frameBorder="0"
+                  style={{
+                    border: "none",
+                    maxWidth: "100%",
+                    maxHeight: "100vh",
+                  }}
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
           )}
         </div>
       </div>
@@ -207,7 +76,6 @@ export default function ClinicForms() {
   );
 }
 
-// Tab button component
 function TabButton({ label, icon, isActive, onClick }) {
   return (
     <button

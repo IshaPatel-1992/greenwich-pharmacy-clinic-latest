@@ -108,7 +108,7 @@ export default function ContactForm() {
               <span>
                 <strong>Address:</strong>
                 <br />
-                109 - 45 Greenbriar Dr NW, Calgary, AB
+                109 - 45 Greenbriar lane NW, Calgary, AB
               </span>
             </p>
 
