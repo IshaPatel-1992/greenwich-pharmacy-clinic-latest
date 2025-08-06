@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.b0355e5b.css",
-    "main.js": "/static/js/main.07899cdb.js",
+    "main.css": "/static/css/main.122c62aa.css",
+    "main.js": "/static/js/main.2b52d081.js",
+    "static/media/HomeAboutImg1.jpg": "/static/media/HomeAboutImg1.26fd324da4abb7085c85.jpg",
     "static/media/3795116439-preview.mp4": "/static/media/3795116439-preview.4354adbc7a4ac1ec682e.mp4",
     "static/media/greenwich-logo.png": "/static/media/greenwich-logo.bb88881df3626ac6726e.png",
-    "static/media/Pharmacist-img1.jpg": "/static/media/Pharmacist-img1.dbee798c6b0c1487c84e.jpg",
     "index.html": "/index.html",
-    "main.b0355e5b.css.map": "/static/css/main.b0355e5b.css.map",
-    "main.07899cdb.js.map": "/static/js/main.07899cdb.js.map"
+    "main.122c62aa.css.map": "/static/css/main.122c62aa.css.map",
+    "main.2b52d081.js.map": "/static/js/main.2b52d081.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0355e5b.css",
-    "static/js/main.07899cdb.js"
+    "static/css/main.122c62aa.css",
+    "static/js/main.2b52d081.js"
   ]
 }
