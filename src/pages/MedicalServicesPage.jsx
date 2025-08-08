@@ -1,0 +1,143 @@
+import React, { useEffect } from "react";
+import {
+  FaStethoscope,
+  FaHeartbeat,
+  FaUserMd,
+  FaNotesMedical,
+  FaSyringe,
+  FaFileMedical,
+  FaBaby,
+  FaVenus,
+  FaFileInvoice,
+} from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+// Service data in navbar order all inclusive 13 items
+const services = [
+  {
+    title: "Family Practice",
+    icon: <FaUserMd className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
+    description: "Comprehensive care for all ages — from children to seniors. We build long-term relationships for your lifelong health journey.",
+  },
+  {
+    title: "Walk-in Clinic",
+    icon: <FaNotesMedical className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
+    description: "No appointment needed. Quick access to care for common illnesses, infections, and minor concerns.",
+  },
+  {
+    title: "Telemedicine",
+    icon: <FaStethoscope className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
+    description: "Virtual consultations from the comfort of your home. Get expert advice without traveling.",
+  },
+  {
+    title: "Immunization",
+    icon: <FaSyringe className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
+    description: "Protect yourself and your loved ones from serious diseases. We offer a full range of routine childhood and adult vaccines, including travel immunizations for global destinations.",
+  },
+  {
+    title: "Pap Smear / Pap Test",
+    icon: <FaFileMedical className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
+    description: "A crucial screening test for cervical cancer and other abnormalities. Early detection helps in timely treatment and better health outcomes for women.",
+  },
+  {
+    title: "Chronic & Minor Illness Care",
+    icon: <FaHeartbeat className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
+    description: "Comprehensive care for chronic conditions such as diabetes, hypertension, and asthma, along with treatment for minor illnesses like colds, flu, and infections. Walk-ins welcome.",
+  },
+  {
+    title: "Routine Physical Exams",
+    icon: <FaStethoscope className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
+    description: "Annual check-ups including vital signs, screening tests, and preventive consultations.",
+  },
+  {
+    title: "Women's Health",
+    icon: <FaVenus className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
+    description: "Personalized care for women of all ages — from menstruation to menopause.",
+  },
+  {
+    title: "Pregnancy Testing",
+    icon: <FaBaby className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
+    description: "Confidential, fast, and accurate tests with supportive follow-up care.",
+  },
+  {
+    title: "Treatment for Minor Injuries",
+    icon: <FaHeartbeat className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
+    description: "Prompt care for cuts, burns, sprains, and other non-life-threatening injuries. Walk-in welcome.",
+  },
+  {
+    title: "Medical Notes & Forms",
+    icon: <FaNotesMedical className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
+    description: "Sick notes, school forms, or fitness clearance — customized to your need.",
+  },
+  {
+    title: "Health Education",
+    icon: <FaUserMd className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
+    description: "Get guidance on disease prevention, nutrition, fitness, and overall well-being.",
+  },
+  {
+    title: "Uninsured Services",
+    icon: <FaFileInvoice className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
+    description: "Affordable private-pay options for services not covered by public health plans.",
+  },
+];
+
+export default function MedicalServicesPage() {
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
+  return (
+    <div id="medical" className="scroll-mt-28">
+      {/* Intro Section */}
+      <section className="py-20 px-6 bg-white text-gray-700 max-w-4xl mx-auto" data-aos="fade-up">
+        <div className="inline-block mb-6 relative">
+          <h2 className="text-4xl font-extrabold text-teal-800 relative z-10">
+            Medical Services
+          </h2>
+          <div className="absolute w-20 h-1 bg-teal-600 bottom-0 left-0 rounded"></div>
+        </div>
+
+        <div className="space-y-6 text-base md:text-lg leading-relaxed">
+          <p className="flex items-start gap-3">
+            <FaStethoscope className="text-teal-600 mt-1" />
+            At Greenwich Medical Clinic, we’re committed to providing high-quality, compassionate care tailored to every stage of life.
+          </p>
+          <p className="flex items-start gap-3">
+            <FaUserMd className="text-teal-600 mt-1" />
+            From preventive check-ups to women’s health and chronic disease management, our team ensures your well-being is always prioritized.
+          </p>
+          <ul className="list-disc list-inside space-y-2 pl-6 pt-2 text-gray-800">
+            <li>Comprehensive annual physical exams</li>
+            <li>Vaccinations & flu shots</li>
+            <li>Pediatric care and pregnancy testing</li>
+            <li>Women's health screenings</li>
+            <li>Uninsured services available</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="bg-gradient-to-br from-teal-300 via-white to-teal-100 py-20 px-6" data-aos="fade-up">
+        <div className="max-w-7xl mx-auto">
+          <h3 className="text-3xl sm:text-4xl font-extrabold text-center text-teal-700 mb-14">
+            Walk-In & Appointment-Based Services
+          </h3>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map(({ title, description, icon }) => (
+              <div
+                key={title}
+                className="group bg-teal-600 rounded-2xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl p-6 flex flex-col items-center text-center text-white"
+              >
+                <div className="mb-4">{icon}</div>
+                <h4 className="text-lg sm:text-xl font-semibold mb-2">{title}</h4>
+                <p className="text-sm sm:text-base leading-relaxed opacity-90">{description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

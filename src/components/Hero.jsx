@@ -3,6 +3,7 @@ import heroVideo from "../assets/videos/3795116439-preview.mp4";
 import { FaStethoscope, FaHeartbeat } from "react-icons/fa";
 import { MdLocalPharmacy, MdMedicalServices } from "react-icons/md";
 import { GiMedicines } from "react-icons/gi";
+import { Link } from "react-router-dom";
 import { RiStethoscopeFill } from "react-icons/ri";
 
 export default function HeroSection() {
@@ -41,20 +42,20 @@ export default function HeroSection() {
 
         {/* Button Group */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <a
-            href="#medical"
+          <Link
+  to="/medical-services"
             className="flex items-center gap-2 px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold rounded-full shadow-lg transition"
           >
             <MdMedicalServices className="text-xl" />
             Medical Services
-          </a>
-          <a
-            href="#pharmacy"
+          </Link>
+          <Link
+  to="/pharmacy-services"
             className="flex items-center gap-2 px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold rounded-full shadow-lg transition"
           >
             <GiMedicines className="text-xl" />
             Pharmacy Services
-          </a>
+          </Link>
           { /* <a
             href="#medeo"
             className="flex items-center gap-2 px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold rounded-full shadow-lg transition"

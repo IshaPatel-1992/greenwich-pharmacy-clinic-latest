@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Navbar1 from "./components/Navbar1";
 import Footer from "./components/Footer";
+import MedicalServicesPage from './pages/MedicalServicesPage';
+import PharmacyServicesPage from './pages/PharmacyServicesPage';
 
 export default function App() {
   useEffect(() => {
@@ -19,6 +21,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aboutuspg" element={<AboutUs />} />
+        <Route path="/medical-services" element={<MedicalServicesPage />} />
+        <Route path="/pharmacy-services" element={<PharmacyServicesPage />} />
         {/* Add more pages here */}
       </Routes>
       <Footer />
