@@ -13,14 +13,13 @@ export default function About() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-center gap-16">
         {/* Image Side */}
         <div
-          className="w-full md:w-1/2 rounded-3xl shadow-2xl overflow-hidden max-h-[28rem]"
+          className="w-full md:w-1/2 rounded-3xl shadow-2xl overflow-hidden aspect-[4/3]"
           data-aos="fade-right"
         >
           <img
             src={aboutImage}
             alt="Greenwich Clinic Pharmacy"
-            className="object-cover w-full h-full rounded-3xl"
-            style={{ minHeight: "20rem" }}
+            className="object-cover w-full h-full"
           />
         </div>
 
@@ -53,7 +52,13 @@ export default function About() {
           </h2>
 
           <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
-           At Greenwich Medical Clinic, your health and well-being come first. Our compassionate team of healthcare professionals provides personalized medical care, from routine check-ups to specialized consultations, supporting you every step of the way. Enhancing your care experience, our on-site pharmacy offers expert prescription services and convenient delivery options — all designed with your comfort in mind.
+            At Greenwich Medical Clinic, your health and well-being come first.
+            Our compassionate team of healthcare professionals provides
+            personalized medical care, from routine check-ups to specialized
+            consultations, supporting you every step of the way. Enhancing your
+            care experience, our on-site pharmacy offers expert prescription
+            services and convenient delivery options — all designed with your
+            comfort in mind.
           </p>
           <Link
             to="/aboutuspg"

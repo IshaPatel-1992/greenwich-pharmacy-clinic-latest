@@ -99,65 +99,74 @@ export default function ContactForm() {
 
           {/* Right: Contact Info & Map */}
           <div className="flex-1 mt-12 md:mt-0 bg-white rounded-xl shadow-lg p-8 text-teal-900">
-            <h3 className="text-2xl font-semibold mb-6">
-              Clinic & Pharmacy Contact
-            </h3>
+            <h3 className="text-2xl font-semibold mb-6">Clinic & Pharmacy Contact</h3>
 
             <p className="flex items-start gap-3 mb-4">
               <FaMapMarkerAlt className="text-xl text-teal-700 mt-1" />
               <span>
                 <strong>Address:</strong>
                 <br />
-                109 - 45 Greenbriar lane NW, Calgary, AB
+                109 - 45 Greenbriar Lane NW, Calgary, AB
               </span>
             </p>
 
-           <div className="space-y-4">
-  <p className="flex items-start gap-3">
-    <FaUserMd className="text-xl text-teal-700 mt-1" />
-    <span>
-      <strong>Clinic:</strong>
-      <br />
-      Phone:{" "}
-      <a href="tel:+15879439528" className="text-teal-700 hover:underline">
-        (587) 943-9528
-      </a>
-      <br />
-      Email:{" "}
-      <a
-        href="mailto:info@greenwichhealth.ca"
-        className="text-teal-700 hover:underline"
-      >
-        info@greenwichhealth.ca
-      </a>
-    </span>
-  </p>
+            <div className="space-y-4">
+              <p className="flex items-start gap-3">
+                <FaUserMd className="text-xl text-teal-700 mt-1" />
+                <span>
+                  <strong>Clinic:</strong>
+                  <br />
+                  Phone:{" "}
+                  <a href="tel:+15879439528" className="text-teal-700 hover:underline">
+                    (587) 943-9528
+                  </a>
+                  <br />
+                  Email:{" "}
+                  <a
+                    href="mailto:info@greenwichhealth.ca"
+                    className="text-teal-700 hover:underline"
+                  >
+                    info@greenwichhealth.ca
+                  </a>
+                  <br />
+                  Hours: <span className="text-gray-700">Mon–Fri: 9am – 5pm</span>
+                </span>
+              </p>
 
-  <p className="flex items-start gap-3">
-    <FaPills className="text-xl text-teal-700 mt-1" />
-    <span>
-      <strong>Pharmacy:</strong>
-      <br />
-      Phone:{" "}
-      <a href="tel:+15879439526" className="text-teal-700 hover:underline">
-        (587) 943-9526
-      </a>
-      <br />
-      Email:{" "}
-      <a
-        href="mailto:pharmacy@greenwichhealth.ca"
-        className="text-teal-700 hover:underline"
-      >
-        pharmacy@greenwichhealth.ca
-      </a>
-    </span>
-  </p>
-</div>
+              <p className="flex items-start gap-3">
+                <FaPills className="text-xl text-teal-700 mt-1" />
+                <span>
+                  <strong>Pharmacy:</strong>
+                  <br />
+                  Phone:{" "}
+                  <a href="tel:+15879439526" className="text-teal-700 hover:underline">
+                    (587) 943-9526
+                  </a>
+                  <br />
+                  Email:{" "}
+                  <a
+                    href="mailto:pharmacy@greenwichhealth.ca"
+                    className="text-teal-700 hover:underline"
+                  >
+                    pharmacy@greenwichhealth.ca
+                  </a>
+                  <br />
+                  Hours:{" "}
+                  <span className="text-gray-700">
+                    Mon–Fri: 9am – 6pm
+                    <br />
+                    Sat: 10am – 3pm
+                    <br />
+                    Sun: Closed
+                  </span>
+                </span>
+              </p>
+            </div>
 
-            <div className="w-full h-64 rounded-md overflow-hidden shadow-inner">
+            <div className="w-full h-64 rounded-md overflow-hidden shadow-inner mt-6">
               <iframe
                 title="Greenwich Clinic Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.951340578479!2d-114.13991958450512!3d51.09695897956845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53717014d9aa78a5%3A0x5c4f1e70db9d3d18!2s109%2045%20Greenbriar%20Dr%20NW%2C%20Calgary%2C%20AB%20T3B%202Z3!5e0!3m2!1sen!2sca!4v1689873995601!5m2!1sen!2sca"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.951340578479!2d-114.13991958450512!3d51.09695897956845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53717014d9aa78a5%3A0x5c4f1e70db9d3d18!2s109%2045%20Greenbriar%20Lane%20NW%2C%20Calgary%2C%20AB%20T3B%202Z3!5e0!3m2!1sen!2sca!4v1689873995601!5m2!1sen!2sca"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -167,6 +176,7 @@ export default function ContactForm() {
               ></iframe>
             </div>
           </div>
+
         </div>
       </div>
     </section>

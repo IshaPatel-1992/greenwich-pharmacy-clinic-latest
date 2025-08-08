@@ -9,7 +9,7 @@ const team = [
   },
   {
     name: "Mehul Jadav",
-    role: "Pharmacist",
+    role: "Clinical Pharmacist",
     icon: <FaHandsHelping className="text-3xl text-teal-600 mb-2" />,
   },
 ];
