@@ -48,18 +48,15 @@ const menuItems = [
   {
     label: "Transfer Prescription",
     href: "/#transfer",
-    onClick: () => {
-      localStorage.setItem("activeTab", "transfer");
-    }
+    // store + event will be triggered in handler
+    tabName: "transfer",
   },
   {
     label: "Register Now",
     href: "/#register",
     isCTA: true,
-    onClick: () => {
-      localStorage.setItem("activeTab", "registration");
-    }
-  }
+    tabName: "registration",
+  },
 ];
 
 export default function Navbar1() {
@@ -82,8 +79,33 @@ export default function Navbar1() {
     setOpenSubmenuIndex(null);
   };
 
+  // Unified click handler — keeps your styling unchanged
   const handleNavClick = (item) => {
-    if (item.onClick) item.onClick();
+    // If the nav item carries a target tabName, set localStorage and dispatch event (in-page)
+    if (item.tabName) {
+      try {
+        localStorage.setItem("activeTab", item.tabName); // cross-page
+      } catch (e) {
+        // ignore storage errors (e.g., Safari private)
+      }
+      // dispatch in-page event so ClinicForms can react without a reload
+      window.dispatchEvent(new CustomEvent("openTab", { detail: item.tabName }));
+    }
+
+    // Navigate to the href (keeps your link behaviour). Use location.href to ensure page mounts if needed.
+    if (item.href) {
+      // If href includes a hash and we are already on the same path, update hash only to avoid reload:
+      const linkUrl = new URL(item.href, window.location.origin);
+      const currentPath = window.location.pathname;
+      if (linkUrl.pathname === currentPath) {
+        // same page: set hash (this won't reload the page)
+        window.location.hash = linkUrl.hash || "";
+      } else {
+        // different path: navigate (full navigation)
+        window.location.href = item.href;
+      }
+    }
+
     closeMenu();
   };
 
@@ -119,7 +141,11 @@ export default function Navbar1() {
             <div key={item.label} className="relative group">
               <a
                 href={item.href}
-                onClick={() => handleNavClick(item)}
+                onClick={(e) => {
+                  // allow default behavior for normal links except our special case needs pre-handling
+                  e.preventDefault();
+                  handleNavClick(item);
+                }}
                 className={`text-teal-800 hover:text-yellow-600 font-semibold transition-all ${
                   item.isCTA ? "bg-yellow-400 px-4 py-2 rounded-full text-white hover:bg-yellow-500" : ""
                 }`}
@@ -127,6 +153,7 @@ export default function Navbar1() {
                 {item.icon}
                 {item.label}
               </a>
+
               {item.submenu && (
                 <div className="absolute left-0 mt-2 w-[600px] max-h-80 overflow-y-auto bg-white shadow-lg border rounded-lg invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50">
                   <ul className="grid grid-cols-2 gap-4 p-4">
@@ -156,9 +183,7 @@ export default function Navbar1() {
                   <>
                     <button
                       onClick={() => toggleSubmenu(index)}
-                      className={`w-full text-left flex items-center justify-between text-teal-800 text-lg font-semibold ${
-                        item.isCTA ? "bg-yellow-400 text-white px-4 py-2 rounded-full hover:bg-yellow-500" : "hover:text-yellow-600"
-                      }`}
+                      className={`w-full text-left flex items-center justify-between text-teal-800 text-lg font-semibold ${item.isCTA ? "bg-yellow-400 text-white px-4 py-2 rounded-full hover:bg-yellow-500" : "hover:text-yellow-600"}`}
                     >
                       <span className="flex items-center">
                         {item.icon}
@@ -166,6 +191,7 @@ export default function Navbar1() {
                       </span>
                       <span>{openSubmenuIndex === index ? "-" : "+"}</span>
                     </button>
+
                     {openSubmenuIndex === index && (
                       <ul className="mt-1 ml-4 space-y-2">
                         {item.submenu.map((sub) => (
@@ -181,10 +207,11 @@ export default function Navbar1() {
                 ) : (
                   <a
                     href={item.href}
-                    onClick={() => handleNavClick(item)}
-                    className={`block text-teal-800 text-lg font-semibold ${
-                      item.isCTA ? "bg-yellow-400 text-white px-4 py-2 rounded-full hover:bg-yellow-500" : "hover:text-yellow-600"
-                    }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(item);
+                    }}
+                    className={`block text-teal-800 text-lg font-semibold ${item.isCTA ? "bg-yellow-400 text-white px-4 py-2 rounded-full hover:bg-yellow-500" : "hover:text-yellow-600"}`}
                   >
                     {item.icon}
                     {item.label}
