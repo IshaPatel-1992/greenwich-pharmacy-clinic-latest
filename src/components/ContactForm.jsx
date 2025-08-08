@@ -1,182 +1,100 @@
-import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
-import { FaMapMarkerAlt, FaUserMd, FaPills, FaEnvelope } from "react-icons/fa";
+import React from "react";
+import { FaMapMarkerAlt, FaUserMd, FaPills, FaDirections } from "react-icons/fa";
 
 export default function ContactForm() {
-  const formRef = useRef();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "", // Your EmailJS Service ID
-        "", // Your EmailJS Template ID
-        formRef.current,
-        "" // Your EmailJS Public Key
-      )
-      .then(() => {
-        alert("Message sent successfully!");
-        formRef.current.reset();
-      })
-      .catch((error) => {
-        alert("Failed to send message. Please try again later.");
-        console.error(error);
-      });
-  };
-
   return (
     <section
       id="contactus"
-      className="relative py-24 bg-gradient-to-br from-teal-400 via-teal-100 to-white"
+      className="relative py-24 bg-gradient-to-br from-teal-500 via-teal-100 to-white text-teal-900"
     >
-      <div className="absolute inset-0 bg-gradient-to-tr from-white/40 via-white/20 to-transparent pointer-events-none"></div>
-
       <div className="relative max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-4xl font-extrabold text-teal-900 mb-4">
-            Get in Touch
+        {/* Top Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-4xl font-extrabold text-white drop-shadow-md mb-4">
+            Get in Touch With Us
           </h2>
-          <p className="text-lg text-teal-700">
-            Have questions or want to discuss your clinic and pharmacy needs?
-            Fill out the form below and we’ll respond as soon as possible.
+          <p className="text-lg text-white/90">
+            Whether you need medical consultation or prescription support,
+            we're here for you. Explore our contact details below.
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row md:space-x-12">
-          {/* Left: Contact Form */}
-          <form
-            ref={formRef}
-            onSubmit={sendEmail}
-            className="bg-teal-50 shadow-lg rounded-xl p-10 space-y-6 flex-1"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <input
-                type="text"
-                name="first_name"
-                placeholder="First Name"
-                required
-                className="w-full rounded-md border border-teal-300 px-4 py-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400"
-              />
-              <input
-                type="text"
-                name="last_name"
-                placeholder="Last Name"
-                required
-                className="w-full rounded-md border border-teal-300 px-4 py-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400"
-              />
-              <input
-                type="tel"
-                name="user_phone"
-                placeholder="Phone Number"
-                required
-                className="w-full rounded-md border border-teal-300 px-4 py-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400"
-              />
-              <input
-                type="email"
-                name="user_email"
-                placeholder="Email Address"
-                required
-                className="w-full rounded-md border border-teal-300 px-4 py-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400"
-              />
+        {/* Contact Info Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Clinic Info */}
+          <div className="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transition">
+            <div className="flex items-center gap-3 mb-4">
+              <FaUserMd className="text-3xl text-teal-600" />
+              <h3 className="text-2xl font-semibold">Clinic</h3>
             </div>
-
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              rows="6"
-              required
-              className="w-full rounded-md border border-teal-300 px-4 py-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400"
-            ></textarea>
-
-            <button
-              type="submit"
-              className="w-full bg-teal-700 hover:bg-teal-600 text-white font-semibold py-4 rounded-lg transition duration-300"
-            >
-              Send Message
-            </button>
-          </form>
-
-          {/* Right: Contact Info & Map */}
-          <div className="flex-1 mt-12 md:mt-0 bg-white rounded-xl shadow-lg p-8 text-teal-900">
-            <h3 className="text-2xl font-semibold mb-6">Clinic & Pharmacy Contact</h3>
-
-            <p className="flex items-start gap-3 mb-4">
-              <FaMapMarkerAlt className="text-xl text-teal-700 mt-1" />
-              <span>
-                <strong>Address:</strong>
-                <br />
-                109 - 45 Greenbriar Lane NW, Calgary, AB
-              </span>
+            <p className="mb-2">
+              <strong>Phone:</strong>{" "}
+              <a href="tel:+15879439528" className="text-teal-700 hover:underline">
+                (587) 943-9528
+              </a>
             </p>
-
-            <div className="space-y-4">
-              <p className="flex items-start gap-3">
-                <FaUserMd className="text-xl text-teal-700 mt-1" />
-                <span>
-                  <strong>Clinic:</strong>
-                  <br />
-                  Phone:{" "}
-                  <a href="tel:+15879439528" className="text-teal-700 hover:underline">
-                    (587) 943-9528
-                  </a>
-                  <br />
-                  Email:{" "}
-                  <a
-                    href="mailto:info@greenwichhealth.ca"
-                    className="text-teal-700 hover:underline"
-                  >
-                    info@greenwichhealth.ca
-                  </a>
-                  <br />
-                  Hours: <span className="text-gray-700">Mon–Fri: 9am – 5pm</span>
-                </span>
-              </p>
-
-              <p className="flex items-start gap-3">
-                <FaPills className="text-xl text-teal-700 mt-1" />
-                <span>
-                  <strong>Pharmacy:</strong>
-                  <br />
-                  Phone:{" "}
-                  <a href="tel:+15879439526" className="text-teal-700 hover:underline">
-                    (587) 943-9526
-                  </a>
-                  <br />
-                  Email:{" "}
-                  <a
-                    href="mailto:pharmacy@greenwichhealth.ca"
-                    className="text-teal-700 hover:underline"
-                  >
-                    pharmacy@greenwichhealth.ca
-                  </a>
-                  <br />
-                  Hours:{" "}
-                  <span className="text-gray-700">
-                    Mon–Fri: 9am – 6pm
-                    <br />
-                    Sat: 10am – 3pm
-                    <br />
-                    Sun: Closed
-                  </span>
-                </span>
-              </p>
-            </div>
-
-            <div className="w-full h-64 rounded-md overflow-hidden shadow-inner mt-6">
-              <iframe
-                title="Greenwich Clinic Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.951340578479!2d-114.13991958450512!3d51.09695897956845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53717014d9aa78a5%3A0x5c4f1e70db9d3d18!2s109%2045%20Greenbriar%20Lane%20NW%2C%20Calgary%2C%20AB%20T3B%202Z3!5e0!3m2!1sen!2sca!4v1689873995601!5m2!1sen!2sca"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
+            <p className="mb-2">
+              <strong>Email:</strong>{" "}
+              <a
+                href="mailto:info@greenwichhealth.ca"
+                className="text-teal-700 hover:underline"
+              >
+                info@greenwichhealth.ca
+              </a>
+            </p>
+            <p>
+              <strong>Hours:</strong> Mon – Fri: 9am – 5pm <br/>
+              Weekends: Closed
+            </p>
           </div>
 
+          {/* Pharmacy Info */}
+          <div className="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transition">
+            <div className="flex items-center gap-3 mb-4">
+              <FaPills className="text-3xl text-teal-600" />
+              <h3 className="text-2xl font-semibold">Pharmacy</h3>
+            </div>
+            <p className="mb-2">
+              <strong>Phone:</strong>{" "}
+              <a href="tel:+15879439526" className="text-teal-700 hover:underline">
+                (587) 943-9526
+              </a>
+            </p>
+            <p className="mb-2">
+              <strong>Email:</strong>{" "}
+              <a
+                href="mailto:pharmacy@greenwichhealth.ca"
+                className="text-teal-700 hover:underline"
+              >
+                pharmacy@greenwichhealth.ca
+              </a>
+            </p>
+            <p>
+              <strong>Hours:</strong> Mon – Fri: 9am – 6pm <br />
+              Sat: 10am – 3pm <br />
+              Sun: Closed
+            </p>
+          </div>
+        </div>
+
+        {/* Address & Map Section */}
+        <div className="mt-16 bg-white rounded-xl shadow-lg p-8">
+          <div className="flex items-center gap-3 mb-4">
+            <FaMapMarkerAlt className="text-2xl text-teal-600" />
+            <h3 className="text-xl font-semibold">Address</h3>
+          </div>
+          <p className="mb-4">
+            109 - 45 Greenbriar Lane NW, Calgary, AB
+          </p>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=109+-+45+Greenbriar+Lane+NW,+Calgary,+AB"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-medium transition mt-2"
+          >
+            <FaDirections />
+            Get Directions
+          </a>
         </div>
       </div>
     </section>

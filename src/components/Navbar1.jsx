@@ -44,7 +44,7 @@ const menuItems = [
     ],
   },
   { label: "About Us", href: "/#about" },
-  { label: "Transfer Prescription", href: "/#transfer" },
+  { label: "Transfer Prescription", href: "/#register" },
   { label: "Contact Us", href: "/#contactus" },
   { label: "Register Now", href: "/#register", isCTA: true },
 ];

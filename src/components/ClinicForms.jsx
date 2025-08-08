@@ -49,7 +49,7 @@ export default function ClinicForms() {
           )}
 
           {activeTab === "transfer" && (
-            <div id="transfer">
+            <div id="transfer1">
               <h2 className="text-2xl font-bold text-teal-800 text-center mb-4">
                 Transfer Prescription
               </h2>
