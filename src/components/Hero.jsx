@@ -4,8 +4,6 @@ import { FaStethoscope, FaHeartbeat } from "react-icons/fa";
 import { MdLocalPharmacy, MdMedicalServices } from "react-icons/md";
 import { GiMedicines } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import { RiStethoscopeFill } from "react-icons/ri";
-
 export default function HeroSection() {
   return (
     <section
@@ -25,9 +23,8 @@ export default function HeroSection() {
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-teal-900/40 to-black/70" />
-      <div className="absolute top-8 left-8 bg-red-600 text-white font-bold px-4 py-2 rounded-full shadow-lg animate-pulse">
-        Opening Soon!
-      </div>
+
+     
 
       {/* Centered Content */}
       <div className="relative z-10 text-center max-w-3xl px-4 py-10 md:py-16 bg-black/30 backdrop-blur-sm rounded-2xl shadow-lg">
@@ -36,7 +33,7 @@ export default function HeroSection() {
           <FaHeartbeat />
           <MdLocalPharmacy />
         </div>
-        { /* Opening Soon Banner */ }
+       
         <div className="mb-4">
           <span className="bg-yellow-400 text-teal-900 font-bold px-4 py-1 rounded-full shadow-md animate-bounce">
             Opening Soon!
@@ -66,19 +63,11 @@ export default function HeroSection() {
             <GiMedicines className="text-xl" />
             Pharmacy Services
           </Link>
-          { /* <a
-            href="#medeo"
-            className="flex items-center gap-2 px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold rounded-full shadow-lg transition"
-          >
-            <RiStethoscopeFill className="text-xl" />
-            Book through Medeo
-          </a> } */ }
         </div>
-        { /* Opening Soon Banner */ }
-        <p className="mt-6 text-lg font-semibold text-yellow-300 animate-pulse">
-          🌟 Opening Soon! Stay Tuned 🌟
-        </p>
 
+        { /* <p className="mt-6 text-lg font-semibold text-yellow-300 animate-pulse">
+          🌟 Opening Soon! Stay Tuned 🌟
+        </p> */ }
       </div>
     </section>
   );
