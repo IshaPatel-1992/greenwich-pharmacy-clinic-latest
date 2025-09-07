@@ -7,8 +7,7 @@ import ClinicForms from "../components/ClinicForms.jsx";
 
 export default function Home() {
   return (
-    <>
-      
+    <>      
       <Hero />
       <About />
       <ContactForm />

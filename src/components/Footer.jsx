@@ -36,22 +36,22 @@ export default function Footer() {
 
         {/* Navigation */}
         <nav className="flex justify-center space-x-6 text-sm">
-          <a href="#privacy" className="text-gray-300 hover:text-yellow-400 transition duration-300">
+         { /*  <a href="#privacy" className="text-gray-300 hover:text-yellow-400 transition duration-300">
             Privacy
           </a>
           <a href="#terms" className="text-gray-300 hover:text-yellow-400 transition duration-300">
             Terms
-          </a>
+          </a> 
           <a href="#contactus" className="text-gray-300 hover:text-yellow-400 transition duration-300">
             Contact
-          </a>
+          </a> */ }
         </nav>
 
         {/* Socials and Copyright */}
         <div className="flex flex-col items-center md:items-end space-y-3">
           <div className="flex space-x-4 text-yellow-400 text-lg">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/people/Greenwich-Medical-Clinic/61579903010613/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition duration-300"
@@ -60,7 +60,7 @@ export default function Footer() {
               <FaFacebookF />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/greenwich9528/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition duration-300"
@@ -76,15 +76,6 @@ export default function Footer() {
               aria-label="Twitter"
             >
               <FaTwitter />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition duration-300"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedinIn />
             </a>
           </div>
           <div className="text-xs text-gray-400 text-center md:text-right">

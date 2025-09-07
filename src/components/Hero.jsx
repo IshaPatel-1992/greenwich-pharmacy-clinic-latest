@@ -36,7 +36,7 @@ export default function HeroSection() {
        
         <div className="mb-4">
           <span className="bg-yellow-400 text-teal-900 font-bold px-4 py-1 rounded-full shadow-md animate-bounce">
-            Opening Soon!
+            Accepting New Patients!
           </span>
         </div>
 
