@@ -1,7 +1,6 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaDownload, FaCertificate } from "react-icons/fa";
 import aboutImage from "../assets/About/HomeAboutImg1.jpg";
-//import { Link } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 
 export default function About() {
@@ -10,7 +9,7 @@ export default function About() {
       id="about"
       className="py-24 bg-gradient-to-r from-teal-50 to-white px-6"
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-center gap-16">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
         {/* Image Side */}
         <div
           className="w-full md:w-1/2 rounded-3xl shadow-2xl overflow-hidden aspect-[4/3]"
@@ -51,30 +50,43 @@ export default function About() {
             </span>
           </h2>
 
-          <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
-            At Greenwich Medical Clinic, your health and well-being come first.
-            Our compassionate team of healthcare professionals provides
-            personalized medical care, from routine check-ups to specialized
-            consultations, supporting you every step of the way. Enhancing your
-            care experience, our on-site pharmacy offers expert prescription
-            services and convenient delivery options — all designed with your
-            comfort in mind.
+          {/* Improved readability paragraph */}
+          <p className="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
+            At Greenwich Medical Clinic, your health and well-being come first. 
+            Our compassionate team provides personalized medical care, from routine check-ups to specialized consultations. 
+            Our on-site{" "}
+            <span className="font-semibold text-teal-700">
+              Greenwich Pharmacy is fully licensed and accredited by certified pharmacists
+            </span>
+            , ensuring safe, reliable, and professional healthcare services for our community. 
+            We also offer expert prescription services and convenient delivery options — all designed with your comfort in mind.
           </p>
-          <Link
-            to="/aboutuspg"
-            smooth
-            className="
-              self-start inline-flex items-center gap-2
-              bg-yellow-400 hover:bg-yellow-500
-              text-white font-semibold 
-              px-6 py-3 rounded-full
-              shadow-md hover:shadow-lg 
-              transition duration-300 ease-in-out
-              select-none
-            "
-          >
-            Our Medical Experts <FaArrowRight />
-          </Link>
+
+          {/* Buttons stacked and responsive */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
+            {/* Secondary certificate button with icon hover effect */}
+            <a
+              href="/files/certificate.pdf" // place PDF in /public/files/
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Greenwich Pharmacy License Certificate"
+              className="inline-flex items-center gap-2 bg-gray-200 hover:bg-gray-300 text-teal-700 px-4 py-2 rounded-full shadow-sm transition w-fit group"
+              data-aos="fade-up"
+            >
+              <FaCertificate className="transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:text-yellow-500" />
+              View License Certificate
+            </a>
+
+            {/* Primary CTA button */}
+            <Link
+              to="/aboutuspg"
+              smooth
+              className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-white font-semibold px-6 py-3 rounded-full shadow-md hover:shadow-lg transition duration-300 ease-in-out w-fit"
+              data-aos="fade-up"
+            >
+              Our Medical Experts <FaArrowRight />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
