@@ -8,10 +8,11 @@ const team = [
     icon: <FaUserMd className="text-3xl text-teal-600 mb-2" />,
   },
   {
-    name: "Mehul Jadav",
+    name: "Mehulkumar Jadav",
     role: "Pharmacy Manager",
     icon: <FaHandsHelping className="text-3xl text-teal-600 mb-2" />,
-    license: "Pharmacy License #14106", // License Number
+    license: "Practice Permit No. #14106", // Practice Permit Number
+    license: "Pharmacy License #4657", // License Number
   },
 ];
 
@@ -19,8 +20,6 @@ export default function OurTeam() {
   return (
     <section className="py-20 bg-gray-50 px-6 text-center" data-aos="fade-up">
       <div className="inline-block mb-10 relative">
-        <h2 className="text-3xl font-bold text-teal-700 relative z-10">Meet Our Team</h2>
-        <div className="absolute w-20 h-1 bg-teal-500 bottom-0 left-1/2 transform -translate-x-1/2 rounded"></div>
       </div>
 
       <div className="flex flex-wrap justify-center gap-10 max-w-4xl mx-auto">
