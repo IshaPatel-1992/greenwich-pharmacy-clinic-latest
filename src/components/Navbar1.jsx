@@ -22,7 +22,7 @@ const menuItems = [
       { label: "Pregnancy Testing", href: "/medical-services", desc: "Quick and confidential" },
       { label: "Women's Health", href: "/medical-services", desc: "Comprehensive care for women" },
       { label: "Treatment for Minor Illness", href: "/medical-services", desc: "Relief for common symptoms" },
-      { label: "Uninsured Services", href: "/medical-services", desc: "Pay-per-use healthcare services" },
+      { label: "Uninsured Services", href: "/medical-services", desc: "Pay-per-use healthcare services, including IFHP (Interim Federal Health Program) coverage for refugees." },
     ],
   },
   {

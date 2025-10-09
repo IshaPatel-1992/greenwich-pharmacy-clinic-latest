@@ -78,7 +78,7 @@ const services = [
   {
     title: "Uninsured Services",
     icon: <FaFileInvoice className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
-    description: "Affordable private-pay options for services not covered by public health plans.",
+    description: "Affordable private-pay options for services not covered by public health plans. This includes the IFHP (Interim Federal Health Program) for refugees.",
   },
 ];
 
@@ -112,7 +112,7 @@ export default function MedicalServicesPage() {
             <li>Vaccinations & flu shots</li>
             <li>Pediatric care and pregnancy testing</li>
             <li>Women's health screenings</li>
-            <li>Uninsured services available</li>
+            <li>Uninsured services available — including the IFHP (Interim Federal Health Program) for refugees</li>
           </ul>
         </div>
       </section>
