@@ -1,5 +1,5 @@
 import React from "react";
-import heroVideo from "../assets/videos/shutterstock_1076374976.mov";
+import heroVideo from "../assets/videos/1076374976-preview.mp4";
 import { FaStethoscope, FaHeartbeat } from "react-icons/fa";
 import { MdLocalPharmacy, MdMedicalServices } from "react-icons/md";
 import { GiMedicines } from "react-icons/gi";
