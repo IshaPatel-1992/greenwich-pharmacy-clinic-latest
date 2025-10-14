@@ -76,12 +76,12 @@ export default function ClinicForms() {
             isActive={activeTab === "transfer"}
             onClick={() => setActiveTab("transfer")}
           />          
-          <TabButton
+          { /* <TabButton
             icon={<FaSyringe className="mr-2" />}
             label="Vaccination Form"
             isActive={activeTab === "vaccination"}
             onClick={() => setActiveTab("vaccination")}
-          />
+          /> */ }
         </div>
 
         {/* Form Panels */}
@@ -149,7 +149,7 @@ export default function ClinicForms() {
           )}
 
           {/* Vaccination */}
-          {activeTab === "vaccination" && (
+         { /* } {activeTab === "vaccination" && (
             <div id="vaccination">
               <h2 className="text-2xl font-bold text-teal-800 text-center mb-4">
                 Vaccination Form
@@ -165,7 +165,7 @@ export default function ClinicForms() {
                 ></iframe>
               </div>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </section>
