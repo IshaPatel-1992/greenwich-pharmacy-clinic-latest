@@ -64,12 +64,23 @@ export default function ClinicForms() {
             isActive={activeTab === "registration"}
             onClick={() => setActiveTab("registration")}
           />
-          <TabButton
+          { /* <TabButton
             icon={<FaClinicMedical className="mr-2" />}
             label="Book Appointment (Existing Patients)"
             isActive={activeTab === "emr"}
             onClick={() => setActiveTab("emr")}
-          />
+          /> */ } 
+
+          <a
+  href="https://greenwichmedicalclinic.inputhealth.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={`flex items-center px-5 py-2 rounded-full transition font-medium shadow-sm bg-gray-100 text-teal-700 hover:bg-gray-200`}
+>
+  <FaClinicMedical className="mr-2" />
+  Book Appointment (Existing Patients)
+</a>
+
           <TabButton
             icon={<FaCapsules className="mr-2" />}
             label="Transfer Prescription"
@@ -130,23 +141,22 @@ export default function ClinicForms() {
           )}
 
           {/* EMR Booking */}
-          {activeTab === "emr" && (
-            <div id="emr">
-              <h2 className="text-2xl font-bold text-teal-800 text-center mb-4">
-                Book Appointment (EMR)
-              </h2>
-              <div className="w-full h-[600px]">
-                <iframe
-                  title="Book Appointment"
-                  src="https://greenwichmedicalclinic.inputhealth.com/"
-                  width="100%"
-                  height="100%"
-                  style={{ border: "none", maxWidth: "100%", maxHeight: "100%" }}
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          )}
+{activeTab === "emr" && (
+  <div id="emr">
+    <h2 className="text-2xl font-bold text-teal-800 text-center mb-4">
+      Book Appointment (EMR)
+    </h2>
+    <div className="w-full h-[600px]">
+      <a
+        href="https://greenwichmedicalclinic.inputhealth.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-lg transition"
+      > </a>
+    </div>
+  </div>
+)}
+
 
           {/* Vaccination */}
          { /* } {activeTab === "vaccination" && (
