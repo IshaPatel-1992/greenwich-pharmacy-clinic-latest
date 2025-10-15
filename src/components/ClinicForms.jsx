@@ -148,34 +148,18 @@ export default function ClinicForms() {
     </h2>
     <div className="w-full h-[600px]">
       <a
-        href="https://greenwichmedicalclinic.inputhealth.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-lg transition"
-      > </a>
+  href="https://greenwichmedicalclinic.inputhealth.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={`flex items-center px-5 py-2 rounded-full transition font-medium shadow-sm bg-gray-100 text-teal-700 hover:bg-gray-200`}
+>
+  <FaClinicMedical className="mr-2" />
+  Book Appointment (Existing Patients)
+</a>
+
     </div>
   </div>
 )}
-
-
-          {/* Vaccination */}
-         { /* } {activeTab === "vaccination" && (
-            <div id="vaccination">
-              <h2 className="text-2xl font-bold text-teal-800 text-center mb-4">
-                Vaccination Form
-              </h2>
-              <div className="w-full h-[600px]">
-                <iframe
-                  title="Vaccination Form"
-                  src="https://forms.office.com/pages/responsepage.aspx?id=ZdlrskVmiU6QDTni28A9Un4HdRZ0WlpCZTlNMzZOUlpHR1VSMkQ5RUZJNVlCSlJPMjdNWjZUTTRNUS4u&embed=true"
-                  width="100%"
-                  height="100%"
-                  style={{ border: "none", maxWidth: "100%", maxHeight: "100%" }}
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          )} */}
         </div>
       </div>
     </section>
@@ -186,14 +170,16 @@ function TabButton({ label, icon, isActive, onClick }) {
   return (
     <button
       onClick={onClick}
-      className={`flex items-center px-5 py-2 rounded-full transition font-medium shadow-sm ${
-        isActive
-          ? "bg-teal-600 text-white"
-          : "bg-gray-100 text-teal-700 hover:bg-gray-200"
-      }`}
+      className={`flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-md
+        ${
+          isActive
+            ? "bg-teal-600 text-white scale-105 shadow-lg"
+            : "bg-gray-100 text-teal-700 hover:bg-teal-100 hover:scale-105"
+        }`}
     >
-      {icon}
-      {label}
+      <span className="text-lg">{icon}</span>
+      <span>{label}</span>
     </button>
   );
 }
+
