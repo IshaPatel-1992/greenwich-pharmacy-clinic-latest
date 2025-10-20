@@ -1,6 +1,6 @@
 import React from "react";
 import heroVideo from "../assets/videos/1076374976-preview.mp4";
-import { FaStethoscope, FaHeartbeat } from "react-icons/fa";
+import { FaStethoscope, FaHeartbeat, FaSyringe } from "react-icons/fa";
 import { MdLocalPharmacy, MdMedicalServices } from "react-icons/md";
 import { GiMedicines } from "react-icons/gi";
 import { Link } from "react-router-dom";
@@ -43,9 +43,16 @@ export default function HeroSection() {
         <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4 drop-shadow-md">
           We're here to support your health journey
         </h1>
-        <p className="text-base md:text-xl mb-8 text-white/90 font-light">
-          Compassionate care, expert professionals, and convenient access—all under one roof.
-        </p>
+       <p className="text-base md:text-xl mb-8 text-white/90 font-light">
+  Compassionate care, expert professionals, and convenient access—all under one roof.
+</p>
+
+{/* PCN Affiliation */}
+<p className="text-sm md:text-lg text-yellow-300 font-medium mb-8">
+  Proud member of the <span className="font-semibold">Calgary Foothills Primary Care Network (PCN)</span>
+  — working together to provide coordinated, patient-centred care.
+</p>
+
 
         {/* Button Group */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -69,6 +76,15 @@ export default function HeroSection() {
           🌟 Opening Soon! Stay Tuned 🌟
         </p> */ }
       </div>
+      {/* Floating Flu Vaccine Button */}
+<Link
+  to="/pharmacy-services" // or /flu-vaccine if you have that route
+  className="fixed bottom-6 right-6 bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold px-5 py-3 rounded-full shadow-lg flex items-center gap-2 animate-bounce z-50"
+>
+  <FaSyringe className="text-xl" />
+  Flu Shots Available
+</Link>
     </section>
   );
+  
 }

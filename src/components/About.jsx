@@ -54,6 +54,7 @@ export default function About() {
           <p className="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
             At Greenwich Medical Clinic, your health and well-being come first. 
             Our compassionate team provides personalized medical care, from routine check-ups to specialized consultations. 
+            As a proud member of the <b>Calgary Foothills Primary Care Network (PCN)</b>, we collaborate with local physicians and healthcare professionals to deliver coordinated, patient-centred care.
             Our on-site{" "}
             <span className="font-semibold text-teal-700">
               Greenwich Pharmacy is fully licensed and accredited by certified pharmacists
@@ -61,7 +62,6 @@ export default function About() {
             , ensuring safe, reliable, and professional healthcare services for our community. 
             We also offer expert prescription services and convenient delivery options — all designed with your comfort in mind.
           </p>
-
           {/* Buttons stacked and responsive */}
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
             {/* Secondary certificate button with icon hover effect */}
