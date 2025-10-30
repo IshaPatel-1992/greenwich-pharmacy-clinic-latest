@@ -64,18 +64,7 @@ export default function About() {
           </p>
           {/* Buttons stacked and responsive */}
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
-            {/* Secondary certificate button with icon hover effect */}
-            <a
-              href="/files/certificate.pdf" // place PDF in /public/files/
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View Greenwich Pharmacy License Certificate"
-              className="inline-flex items-center gap-2 bg-gray-200 hover:bg-gray-300 text-teal-700 px-4 py-2 rounded-full shadow-sm transition w-fit group"
-              data-aos="fade-up"
-            >
-              <FaCertificate className="transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:text-yellow-500" />
-              View License Certificate
-            </a>
+            
 
             {/* Primary CTA button */}
             <Link

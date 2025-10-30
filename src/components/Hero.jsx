@@ -76,14 +76,7 @@ export default function HeroSection() {
           🌟 Opening Soon! Stay Tuned 🌟
         </p> */ }
       </div>
-      {/* Floating Flu Vaccine Button */}
-<Link
-  to="/pharmacy-services" // or /flu-vaccine if you have that route
-  className="fixed bottom-6 right-6 bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold px-5 py-3 rounded-full shadow-lg flex items-center gap-2 animate-bounce z-50"
->
-  <FaSyringe className="text-xl" />
-  Flu Shots Available
-</Link>
+      
     </section>
   );
   
