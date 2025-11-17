@@ -71,8 +71,7 @@ export default function ContactForm() {
             </p>
             <p>
               <strong>Hours:</strong> Mon – Fri: 9am – 5pm <br />
-              Sat: Closed <br />
-              Sun & Statutory Holidays: Closed
+              Saturday, Sunday & Statutory Holidays: Closed
             </p>
           </div>
 
@@ -99,8 +98,7 @@ export default function ContactForm() {
             </p>
             <p className="mb-4">
               <strong>Hours:</strong> Mon – Fri: 9am – 6pm <br />
-              Sat: 10am – 3pm <br />
-              Sun & Statutory Holidays: Closed
+              Saturday, Sunday & Statutory Holidays: Closed
             </p>
 
             <a

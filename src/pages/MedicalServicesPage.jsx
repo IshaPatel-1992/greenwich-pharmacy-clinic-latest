@@ -26,6 +26,16 @@ const services = [
     description: "No appointment needed. Quick access to care for common illnesses, infections, and minor concerns.",
   },
   {
+    title: "IUD & Contraceptive Implant Insertion",
+    icon: <FaVenus className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
+    description: "Now offering IUD and contraceptive implant insertion with professional, confidential care.",
+  },
+  {
+    title: "Spanish-Speaking Physician",
+    icon: <FaUserMd className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
+    description: "Walk-in or book an appointment with our Spanish-speaking doctor available on-site.",
+  },
+  {
     title: "Telemedicine",
     icon: <FaStethoscope className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
     description: "Virtual consultations from the comfort of your home. Get expert advice without traveling.",

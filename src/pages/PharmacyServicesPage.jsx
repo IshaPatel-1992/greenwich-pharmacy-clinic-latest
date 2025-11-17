@@ -63,11 +63,6 @@ const pharmacyServices = [
     description: "Mobility aids, wound care, incontinence products, and medical equipment.",
   },
   {
-    title: "Breast Pump Rental",
-    icon: <FaBaby className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
-    description: "Safe and hygienic electric breast pump rentals by day, week, or month.",
-  },
-  {
     title: "Free Local Delivery",
     icon: <FaTruck className="text-5xl text-white group-hover:scale-110 transition-transform duration-300" />,
     description: "Same-day delivery for prescriptions across Calgary—fast and convenient.",

@@ -12,6 +12,16 @@ const menuItems = [
     submenu: [
       { label: "Family Practice", href: "/medical-services", desc: "Personalized care for all ages" },
       { label: "Walk-in Clinic", href: "/medical-services", desc: "No appointment? No problem." },
+      { 
+    label: "IUD & Contraceptive Implant Insertion", 
+    href: "/medical-services", 
+    desc: "Now offering IUD and implant insertion services" 
+  },
+  { 
+    label: "Spanish-Speaking Physician Available", 
+    href: "/medical-services", 
+    desc: "Walk-in or appointment with a Spanish-speaking doctor" 
+  },
       { label: "Telemedicine", href: "/medical-services", desc: "Virtual appointments at your convenience" },
       { label: "Immunization", href: "/medical-services", desc: "Vaccinations for all ages" },
       { label: "Pap Smear or Pap Test", href: "/medical-services", desc: "Screening for cervical cancer" },
@@ -39,7 +49,6 @@ const menuItems = [
       { label: "Compliance Packaging", href: "/pharmacy-services", desc: "Blister packs to simplify medication use" },
       { label: "Travel Health Services", href: "/pharmacy-services", desc: "Travel consults & required immunizations" },
       { label: "Home Care Supplies", href: "/pharmacy-services", desc: "Mobility aids, incontinence & wound care" },
-      { label: "Breast Pump Rental", href: "/pharmacy-services", desc: "Rent electric breast pumps hassle-free" },
       { label: "Free Local Delivery", href: "/pharmacy-services", desc: "Free delivery within Calgary" },
     ],
   },
