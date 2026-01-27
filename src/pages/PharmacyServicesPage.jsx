@@ -1,4 +1,7 @@
 import React, { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+
+
 import {
   FaSyringe,
   FaPrescriptionBottleAlt,
@@ -15,6 +18,7 @@ import {
 } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 
 const pharmacyServices = [
   {
@@ -81,6 +85,12 @@ export default function PharmacyServicesPage() {
 
   return (
     <div id="pharmacy" className="scroll-mt-28">
+      <Helmet>
+          <title>Greenwich Pharmacy Services</title>
+          <meta name="description" content="Pharmacy Services including Prescriptions, Vaccinations, Consultations, Prescribing Pharmacist, OAT, Compounding, Compliance Packaging, Travel Health Services, Home Care Supplies, Free Local Delivery, Uninsured Services, Injection Services" />
+          <meta name="keywords" content="Pharmacy Services including Prescriptions, Vaccinations, Consultations, Prescribing Pharmacist, OAT, Compounding, Compliance Packaging, Travel Health Services, Home Care Supplies, Free Local Delivery, Uninsured Services, Injection Services" />
+          <link rel="canonical" href="https://greenwichhealth.ca/pharmacy-services" />
+        </Helmet>
       <section className="py-20 px-6 bg-white text-gray-700 max-w-4xl mx-auto" data-aos="fade-up">
         <div className="inline-block mb-6 relative">
           <h2 className="text-4xl font-extrabold text-teal-800 relative z-10">Pharmacy Services</h2>

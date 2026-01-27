@@ -1,4 +1,7 @@
 import React, { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+
+
 import {
   FaStethoscope,
   FaHeartbeat,
@@ -12,6 +15,7 @@ import {
 } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 
 // Service data in navbar order all inclusive 13 items
 const services = [
@@ -99,6 +103,22 @@ export default function MedicalServicesPage() {
 
   return (
     <div id="medical" className="scroll-mt-28">
+       {/* ✅ SEO Meta Tags */}
+      <Helmet>
+        <title>Medical Services | Greenwich Medical Clinic & Pharmacy</title>
+        <meta
+          name="description"
+          content="Family practice, walk-in clinic, women's health, chronic disease management, immunizations, IUD & contraceptive implant insertion, and uninsured medical services at Greenwich Medical Clinic."
+        />
+        <meta
+          name="keywords"
+          content="Family Practice, Walk-in Clinic, Medical Services Calgary, Women's Health, Chronic Disease Management, IUD Insertion, Contraceptive Implant, Vaccines, Immunizations, IFHP Clinic"
+        />
+        <link
+          rel="canonical"
+          href="https://greenwichhealth.ca/medical-services"
+        />
+      </Helmet>
       {/* Intro Section */}
       <section className="py-20 px-6 bg-white text-gray-700 max-w-4xl mx-auto" data-aos="fade-up">
         <div className="inline-block mb-6 relative">
