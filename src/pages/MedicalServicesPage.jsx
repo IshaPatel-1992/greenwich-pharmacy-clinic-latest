@@ -103,23 +103,77 @@ export default function MedicalServicesPage() {
 
   return (
     <div id="medical" className="scroll-mt-28">
-       {/* ✅ SEO Meta Tags */}
-      <Helmet>
-        <title>Medical Services | Greenwich Medical Clinic & Pharmacy</title>
-        <meta
-          name="description"
-          content="Family practice, walk-in clinic, women's health, chronic disease management, immunizations, IUD & contraceptive implant insertion, and uninsured medical services at Greenwich Medical Clinic."
-        />
-        <meta
-          name="keywords"
-          content="Family Practice, Walk-in Clinic, Medical Services Calgary, Women's Health, Chronic Disease Management, IUD Insertion, Contraceptive Implant, Vaccines, Immunizations, IFHP Clinic"
-        />
-        <link
-          rel="canonical"
-          href="https://greenwichhealth.ca/medical-services"
-        />
-      </Helmet>
-      {/* Intro Section */}
+     <Helmet>
+  {/* Primary Medical SEO */}
+  <title>
+    Medical Services in NW Calgary | Greenwich Medical Clinic
+  </title>
+
+  <meta
+    name="description"
+    content="Greenwich Medical Clinic provides comprehensive medical services in NW Calgary, including walk-in clinic care, family practice, women’s health, immunizations, chronic disease management, IUD and contraceptive implant insertion, telemedicine, and uninsured medical services including IFHP."
+  />
+
+  <meta
+    name="keywords"
+    content="Medical Services NW Calgary, Walk-In Clinic NW Calgary, Family Practice Calgary, Medical Clinic Greenbriar NW, Women's Health Clinic Calgary, IUD Insertion Calgary, Contraceptive Implant Calgary, Immunizations NW Calgary, Chronic Disease Management, Telemedicine Clinic Calgary, IFHP Medical Services"
+  />
+
+  <link
+    rel="canonical"
+    href="https://greenwichhealth.ca/medical-services"
+  />
+
+  {/* Local SEO Signals */}
+  <meta name="geo.region" content="CA-AB" />
+  <meta name="geo.placename" content="NW Calgary" />
+  <meta name="robots" content="index, follow" />
+
+  {/* ✅ Medical Services Schema */}
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "@id": "https://greenwichhealth.ca/medical-services#medical-business",
+      "name": "Greenwich Medical Clinic",
+      "url": "https://greenwichhealth.ca/medical-services",
+      "logo": "https://greenwichhealth.ca/greenwich-logo.png",
+      "telephone": "+1-587-943-9528",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "45 Greenbriar Dr NW Unit #109",
+        "addressLocality": "Calgary",
+        "addressRegion": "AB",
+        "postalCode": "T3B 6M2",
+        "addressCountry": "CA"
+      },
+      "medicalSpecialty": [
+        "FamilyPractice",
+        "PrimaryCare",
+        "Gynecology",
+        "PreventiveMedicine"
+      ],
+      "availableService": [
+        { "@type": "MedicalProcedure", "name": "Walk-In Clinic Services" },
+        { "@type": "MedicalProcedure", "name": "Family Practice" },
+        { "@type": "MedicalProcedure", "name": "Women's Health Services" },
+        { "@type": "MedicalProcedure", "name": "IUD & Contraceptive Implant Insertion" },
+        { "@type": "MedicalProcedure", "name": "Immunizations & Vaccinations" },
+        { "@type": "MedicalProcedure", "name": "Chronic Disease Management" },
+        { "@type": "MedicalProcedure", "name": "Telemedicine Consultations" },
+        { "@type": "MedicalProcedure", "name": "Uninsured & IFHP Medical Services" }
+      ],
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "NW Calgary, AB"
+      },
+      "sameAs": [
+        "https://www.google.com/maps/place/Greenwich+Medical+Clinic+%26+Pharmacy"
+      ]
+    })}
+  </script>
+</Helmet>
+{/* Intro Section */}
       <section className="py-20 px-6 bg-white text-gray-700 max-w-4xl mx-auto" data-aos="fade-up">
         <div className="inline-block mb-6 relative">
           <h2 className="text-4xl font-extrabold text-teal-800 relative z-10">

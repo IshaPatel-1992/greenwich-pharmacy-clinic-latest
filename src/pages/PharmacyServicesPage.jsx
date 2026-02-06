@@ -86,11 +86,73 @@ export default function PharmacyServicesPage() {
   return (
     <div id="pharmacy" className="scroll-mt-28">
       <Helmet>
-          <title>Greenwich Pharmacy Services</title>
-          <meta name="description" content="Pharmacy Services including Prescriptions, Vaccinations, Consultations, Prescribing Pharmacist, OAT, Compounding, Compliance Packaging, Travel Health Services, Home Care Supplies, Free Local Delivery, Uninsured Services, Injection Services" />
-          <meta name="keywords" content="Pharmacy Services including Prescriptions, Vaccinations, Consultations, Prescribing Pharmacist, OAT, Compounding, Compliance Packaging, Travel Health Services, Home Care Supplies, Free Local Delivery, Uninsured Services, Injection Services" />
-          <link rel="canonical" href="https://greenwichhealth.ca/pharmacy-services" />
-        </Helmet>
+  {/* Primary Pharmacy SEO */}
+  <title>
+    Pharmacy Services in NW Calgary | Greenwich Pharmacy
+  </title>
+
+  <meta
+    name="description"
+    content="Greenwich Pharmacy in NW Calgary offers prescription dispensing, vaccinations, injection services, prescribing pharmacist care, OAT programs, compounding, compliance packaging, travel health services, home care supplies, uninsured pharmacy services, and free local delivery."
+  />
+
+  <meta
+    name="keywords"
+    content="Pharmacy Services NW Calgary, Calgary Pharmacy, Prescriptions NW Calgary, Vaccinations Pharmacy Calgary, Prescribing Pharmacist, OAT Pharmacy Calgary, Compounding Pharmacy, Compliance Packaging, Travel Vaccines Pharmacy, Injection Services, Free Prescription Delivery Calgary"
+  />
+
+  <link
+    rel="canonical"
+    href="https://greenwichhealth.ca/pharmacy-services"
+  />
+
+  {/* Local SEO Signals */}
+  <meta name="geo.region" content="CA-AB" />
+  <meta name="geo.placename" content="NW Calgary" />
+  <meta name="robots" content="index, follow" />
+
+  {/* ✅ Pharmacy Schema */}
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Pharmacy",
+      "@id": "https://greenwichhealth.ca/pharmacy-services#pharmacy",
+      "name": "Greenwich Pharmacy",
+      "url": "https://greenwichhealth.ca/pharmacy-services",
+      "logo": "https://greenwichhealth.ca/greenwich-logo.png",
+      "telephone": "+1-587-943-9526",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "45 Greenbriar Dr NW Unit #109",
+        "addressLocality": "Calgary",
+        "addressRegion": "AB",
+        "postalCode": "T3B 6M2",
+        "addressCountry": "CA"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "NW Calgary, AB"
+      },
+      "availableService": [
+        { "@type": "MedicalTherapy", "name": "Prescription Dispensing" },
+        { "@type": "MedicalTherapy", "name": "Vaccinations & Immunizations" },
+        { "@type": "MedicalTherapy", "name": "Injection Services" },
+        { "@type": "MedicalTherapy", "name": "Prescribing Pharmacist Services" },
+        { "@type": "MedicalTherapy", "name": "OAT (Opioid Agonist Treatment)" },
+        { "@type": "MedicalTherapy", "name": "Compounding Services" },
+        { "@type": "MedicalTherapy", "name": "Compliance Packaging" },
+        { "@type": "MedicalTherapy", "name": "Travel Health Services" },
+        { "@type": "MedicalTherapy", "name": "Home Care & Medical Supplies" },
+        { "@type": "MedicalTherapy", "name": "Free Prescription Delivery" },
+        { "@type": "MedicalTherapy", "name": "Uninsured Pharmacy Services" }
+      ],
+      "sameAs": [
+        "https://www.google.com/maps/place/Greenwich+Medical+Clinic+%26+Pharmacy"
+      ]
+    })}
+  </script>
+</Helmet>
+
       <section className="py-20 px-6 bg-white text-gray-700 max-w-4xl mx-auto" data-aos="fade-up">
         <div className="inline-block mb-6 relative">
           <h2 className="text-4xl font-extrabold text-teal-800 relative z-10">Pharmacy Services</h2>

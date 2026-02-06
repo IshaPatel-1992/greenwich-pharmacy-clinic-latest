@@ -8,9 +8,76 @@ import {
   FaComments,
 } from "react-icons/fa";
 import concernPoster from "../assets/ContactUS/Poster_PatientConcerns.jpg";
+import { Helmet } from "react-helmet-async";
+
 
 export default function ContactForm() {
   return (
+     <>
+      {/* ✅ SEO Meta Tags & Local Business Schema */}
+      <Helmet>
+        <title>
+          Greenwich Medical Clinic & Pharmacy | NW Calgary Walk-In & Pharmacy
+        </title>
+
+        <meta
+          name="description"
+          content="Greenwich Medical Clinic & Pharmacy in NW Calgary offers walk-in care, family medicine, onsite pharmacy services, immunizations, telemedicine, compounding, and prescription delivery."
+        />
+
+        <link rel="canonical" href="https://greenwichhealth.ca/contact" />
+
+        {/* JSON-LD Schema for Clinic + Pharmacy */}
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "MedicalBusiness",
+                "@id": "https://greenwichhealth.ca/#medical-services",
+                "name": "Greenwich Medical Clinic & Pharmacy",
+                "url": "https://greenwichhealth.ca",
+                "telephone": "+1-587-943-9528",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "45 Greenbriar Dr NW Unit #109",
+                  "addressLocality": "Calgary",
+                  "addressRegion": "AB",
+                  "postalCode": "T3B 6N4",
+                  "addressCountry": "CA"
+                },
+                "openingHours": "Mo-Fr 09:00-17:00",
+                "sameAs": [
+                  "https://www.google.com/maps/place/Greenwich+Medical+Clinic+%26+Pharmacy"
+                ]
+              },
+              {
+                "@type": "Pharmacy",
+                "@id": "https://greenwichhealth.ca/#pharmacy-services",
+                "name": "Greenwich Pharmacy",
+                "url": "https://greenwichhealth.ca",
+                "telephone": "+1-587-943-9526",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "45 Greenbriar Dr NW Unit #109",
+                  "addressLocality": "Calgary",
+                  "addressRegion": "AB",
+                  "postalCode": "T3B 6N4",
+                  "addressCountry": "CA"
+                },
+                "openingHours": "Mo-Fr 09:00-18:00",
+                "sameAs": [
+                  "https://www.google.com/maps/place/Greenwich+Medical+Clinic+%26+Pharmacy"
+                ]
+              }
+            ]
+          }
+          `}
+        </script>
+      </Helmet>
+
+
     <section
       id="contactus"
       className="relative py-24 bg-gradient-to-br from-teal-500 via-teal-100 to-white text-teal-900"
@@ -34,7 +101,7 @@ export default function ContactForm() {
             <FaMapMarkerAlt className="text-2xl text-teal-600" />
             <h3 className="text-xl font-semibold">Address</h3>
           </div>
-          <p className="mb-4">109 - 45 Greenbriar Lane NW, Calgary, AB</p>
+          <p className="mb-4">45 Greenbriar Dr NW Unit #109, Calgary, AB T3B 6N4</p>
           <a
             href="https://www.google.com/maps/dir/?api=1&destination=109+-+45+Greenbriar+Lane+NW,+Calgary,+AB"
             target="_blank"
@@ -100,6 +167,10 @@ export default function ContactForm() {
               <strong>Hours:</strong> Mon – Fri: 9am – 6pm <br />
               Saturday, Sunday & Statutory Holidays: Closed
             </p>
+            <p className="mb-4">
+              <strong>Pharmacy Licensee: </strong>Mehulkumar Jadav<br />
+              Practice Permit No: 14106
+            </p>
 
             <a
               href="/files/certificate.pdf"
@@ -153,5 +224,6 @@ export default function ContactForm() {
         </div>
       </div>
     </section>
+    </>
   );
 }
