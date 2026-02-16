@@ -26,19 +26,28 @@ export default function HeroSection() {
 
      
 
+     
+
       {/* Centered Content */}
       <div className="relative z-10 text-center max-w-3xl px-4 py-10 md:py-16 bg-black/30 backdrop-blur-sm rounded-2xl shadow-lg">
-        <div className="flex justify-center space-x-6 mb-6 text-yellow-300 text-4xl">
+        { /* <div className="flex justify-center space-x-6 mb-6 text-yellow-300 text-4xl">
           <FaStethoscope />
           <FaHeartbeat />
           <MdLocalPharmacy />
-        </div>
+        </div> */ }
+
+         {/* Holiday Notice Bar */}
+
+  <div className="bg-yellow-400 text-teal-900 font-semibold text-center px-6 py-3 rounded-full shadow-lg animate-pulse">
+    We will be closed Monday, February 16, 2026 for Family Day.
+  </div>
+
        
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <span className="bg-yellow-400 text-teal-900 font-bold px-4 py-1 rounded-full shadow-md animate-bounce">
             Accepting New Patients!
           </span>
-        </div>
+        </div> */ }
 
         <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4 drop-shadow-md">
           We're here to support your health journey
