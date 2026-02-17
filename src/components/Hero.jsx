@@ -1,92 +1,110 @@
 import React from "react";
-import heroVideo from "../assets/videos/1076374976-preview.mp4";
-import { FaStethoscope, FaHeartbeat, FaSyringe } from "react-icons/fa";
+import heroImg from "../assets/banners/shutterstock_2502182081.jpg";
+import { FaStethoscope, FaHeartbeat } from "react-icons/fa";
 import { MdLocalPharmacy, MdMedicalServices } from "react-icons/md";
 import { GiMedicines } from "react-icons/gi";
 import { Link } from "react-router-dom";
+
 export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative h-screen flex items-center justify-center text-white px-4 scroll-mt-24 overflow-hidden"
+      className="relative min-h-[100svh] pt-24 flex items-center justify-center text-white px-4 scroll-mt-24 overflow-hidden"
     >
-      {/* Video Background */}
-      <video
+      {/* Image Background */}
+      <img
+        src={heroImg}
+        alt="Healthcare background"
         className="absolute inset-0 w-full h-full object-cover"
-        src={heroVideo}
-        autoPlay
-        muted
-        loop
-        playsInline
-        aria-hidden="true"
+        loading="eager"
       />
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-teal-900/40 to-black/70" />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/45 to-black/75" />
 
-     
+      {/* Content Card */}
+      <div className="relative z-10 w-full max-w-3xl text-center px-5 py-10 md:py-14 bg-black/35 border border-white/10 backdrop-blur-md rounded-2xl shadow-2xl">
 
-     
-
-      {/* Centered Content */}
-      <div className="relative z-10 text-center max-w-3xl px-4 py-10 md:py-16 bg-black/30 backdrop-blur-sm rounded-2xl shadow-lg">
-        { /* <div className="flex justify-center space-x-6 mb-6 text-yellow-300 text-4xl">
+        {/* Icons */}
+        <div className="flex justify-center space-x-6 mb-6 text-yellow-300 text-3xl md:text-4xl">
           <FaStethoscope />
           <FaHeartbeat />
           <MdLocalPharmacy />
-        </div> */ }
+        </div>
 
-         {/* Holiday Notice Bar */}
-
-  <div className="bg-yellow-400 text-teal-900 font-semibold text-center px-6 py-3 rounded-full shadow-lg animate-pulse">
-    We will be closed Monday, February 16, 2026 for Family Day.
-  </div>
-
-       
-        {/* <div className="mb-4">
-          <span className="bg-yellow-400 text-teal-900 font-bold px-4 py-1 rounded-full shadow-md animate-bounce">
-            Accepting New Patients!
+        {/* Accepting Patients Badge */}
+        <div className="mb-4">
+          <span className="inline-flex items-center bg-yellow-400 text-teal-900 font-bold px-4 py-1 rounded-full shadow-md">
+            Accepting New Patients
           </span>
-        </div> */ }
+        </div>
 
+        {/* Heading */}
         <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4 drop-shadow-md">
-          We're here to support your health journey
+          We’re here to support your health journey
         </h1>
-       <p className="text-base md:text-xl mb-8 text-white/90 font-light">
-  Compassionate care, expert professionals, and convenient access—all under one roof.
-</p>
 
-{/* PCN Affiliation */}
-<p className="text-sm md:text-lg text-yellow-300 font-medium mb-8">
-  Proud member of the <span className="font-semibold">Calgary Foothills Primary Care Network (PCN)</span>
-  — working together to provide coordinated, patient-centred care.
-</p>
+        {/* Subtext */}
+        <p className="text-base md:text-xl mb-6 text-white/90 font-light max-w-2xl mx-auto">
+          Compassionate care, expert professionals, and convenient access — all under one roof.
+        </p>
 
-
-        {/* Button Group */}
+        {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <Link
             to="/medical-services"
-            className="flex items-center gap-2 px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold rounded-full shadow-lg transition"
+            className="inline-flex w-full sm:w-auto justify-center items-center gap-2 px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold rounded-full shadow-lg transition
+              focus:outline-none focus:ring-4 focus:ring-yellow-300/50"
           >
             <MdMedicalServices className="text-xl" />
             Medical Services
           </Link>
+
           <Link
             to="/pharmacy-services"
-            className="flex items-center gap-2 px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold rounded-full shadow-lg transition"
+            className="inline-flex w-full sm:w-auto justify-center items-center gap-2 px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold rounded-full shadow-lg transition
+              focus:outline-none focus:ring-4 focus:ring-yellow-300/50"
           >
             <GiMedicines className="text-xl" />
             Pharmacy Services
           </Link>
         </div>
 
-        { /* <p className="mt-6 text-lg font-semibold text-yellow-300 animate-pulse">
-          🌟 Opening Soon! Stay Tuned 🌟
-        </p> */ }
+        {/* Phone Numbers Section */}
+        <div className="mt-6 space-y-1 text-sm md:text-base">
+          <p>
+            Clinic:{" "}
+            <a
+              href="tel:+1(587) 943-9528"
+              className="underline font-semibold hover:text-yellow-300 transition"
+            >
+              (587) 943-9528
+            </a>
+          </p>
+          <p>
+            Pharmacy:{" "}
+            <a
+              href="tel:+1(587) 943-9526"
+              className="underline font-semibold hover:text-yellow-300 transition"
+            >
+              (587) 943-9526
+            </a>
+          </p>
+        </div>
+
+        {/* Trust Indicators */}
+        <div className="mt-6 flex flex-wrap justify-center gap-4 text-xs md:text-sm text-white/75">
+          <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">
+            ✔ Walk-in Available
+          </span>
+          <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">
+            ✔ Prescription Transfers
+          </span>
+          <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">
+            ✔ On-site Pharmacy
+          </span>
+        </div>
       </div>
-      
     </section>
   );
-  
 }

@@ -96,7 +96,7 @@ export default function ContactForm() {
           </div>
 
 
-          {/* ✅ Holiday Closure Banner */}
+          {/* ✅ Holiday Closure Banner 
           <div className="max-w-3xl mx-auto mb-16">
             <div className="rounded-xl border border-white/30 bg-yellow-400 backdrop-blur px-6 py-4 text-teal-900 shadow-lg">
               <div className="font-bold text-lg">Holiday Closure Notice</div>
@@ -105,7 +105,8 @@ export default function ContactForm() {
                 <span className="font-semibold">Family Day</span>. Regular hours resume Tuesday.
               </p>
             </div>
-          </div>
+          </div> */}
+          
           {/* Address Section */}
           <div className="mb-16 bg-white rounded-xl shadow-lg p-8 text-center md:text-left">
             <div className="flex justify-center md:justify-start items-center gap-3 mb-4">
