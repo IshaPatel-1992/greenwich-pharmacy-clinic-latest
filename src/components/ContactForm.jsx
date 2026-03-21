@@ -106,7 +106,7 @@ export default function ContactForm() {
               </p>
             </div>
           </div> */}
-          
+
           {/* Address Section */}
           <div className="mb-16 bg-white rounded-xl shadow-lg p-8 text-center md:text-left">
             <div className="flex justify-center md:justify-start items-center gap-3 mb-4">
@@ -181,8 +181,17 @@ export default function ContactForm() {
               </p>
               <p className="mb-4">
                 <strong>Pharmacy Licensee: </strong>Mehulkumar Jadav<br />
-                Practice Permit No: 14106
+                <strong>Practice Permit No:</strong> 14106
               </p>
+
+              <div className="mb-4 rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm leading-6 text-gray-700">
+                <p>
+                  Upon a patient’s request, the licensee is required to provide the name and
+                  practice permit number of any regulated member who provides a pharmacy
+                  service to that patient or who engages in the practice of pharmacy with
+                  respect to that patient.
+                </p>
+              </div>
 
               <a
                 href="/files/certificate.pdf"
