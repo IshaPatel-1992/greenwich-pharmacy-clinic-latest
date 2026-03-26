@@ -69,24 +69,24 @@ export default function ClinicForms() {
             label="Book Appointment (Existing Patients)"
             isActive={activeTab === "emr"}
             onClick={() => setActiveTab("emr")}
-          /> */ } 
+          /> */ }
 
           <a
-  href="https://greenwichmedicalclinic.inputhealth.com/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className={`flex items-center px-5 py-2 rounded-full transition font-medium shadow-sm bg-gray-100 text-teal-700 hover:bg-gray-200`}
->
-  <FaClinicMedical className="mr-2" />
-  Book Appointment (Existing Patients)
-</a>
+            href="https://greenwichmedicalclinic.inputhealth.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`flex items-center px-5 py-2 rounded-full transition font-medium shadow-sm bg-gray-100 text-teal-700 hover:bg-gray-200`}
+          >
+            <FaClinicMedical className="mr-2" />
+            Book Appointment (Existing Patients)
+          </a>
 
           <TabButton
             icon={<FaCapsules className="mr-2" />}
             label="Transfer Prescription"
             isActive={activeTab === "transfer"}
             onClick={() => setActiveTab("transfer")}
-          />          
+          />
           { /* <TabButton
             icon={<FaSyringe className="mr-2" />}
             label="Vaccination Form"
@@ -95,6 +95,11 @@ export default function ClinicForms() {
           /> */ }
         </div>
 
+        {/* Doctor Availability Notice */}
+        <div className="mb-6 rounded-xl border border-yellow-300 bg-yellow-50 text-yellow-900 px-5 py-4 text-sm md:text-base text-center shadow-sm">
+          <strong>Please Note:</strong> Our physician will be unavailable from <strong>March 30 to April 1</strong>.
+          We kindly recommend booking appointments outside these dates. Pharmacy services remain available.
+        </div>
         {/* Form Panels */}
         <div className="bg-white shadow-lg rounded-2xl p-8 space-y-6">
           {/* Patient Registration */}
@@ -141,25 +146,25 @@ export default function ClinicForms() {
           )}
 
           {/* EMR Booking */}
-{activeTab === "emr" && (
-  <div id="emr">
-    <h2 className="text-2xl font-bold text-teal-800 text-center mb-4">
-      Book Appointment (EMR)
-    </h2>
-    <div className="w-full h-[600px]">
-      <a
-  href="https://greenwichmedicalclinic.inputhealth.com/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className={`flex items-center px-5 py-2 rounded-full transition font-medium shadow-sm bg-gray-100 text-teal-700 hover:bg-gray-200`}
->
-  <FaClinicMedical className="mr-2" />
-  Book Appointment (Existing Patients)
-</a>
+          {activeTab === "emr" && (
+            <div id="emr">
+              <h2 className="text-2xl font-bold text-teal-800 text-center mb-4">
+                Book Appointment (EMR)
+              </h2>
+              <div className="w-full h-[600px]">
+                <a
+                  href="https://greenwichmedicalclinic.inputhealth.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center px-5 py-2 rounded-full transition font-medium shadow-sm bg-gray-100 text-teal-700 hover:bg-gray-200`}
+                >
+                  <FaClinicMedical className="mr-2" />
+                  Book Appointment (Existing Patients)
+                </a>
 
-    </div>
-  </div>
-)}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
@@ -171,10 +176,9 @@ function TabButton({ label, icon, isActive, onClick }) {
     <button
       onClick={onClick}
       className={`flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-md
-        ${
-          isActive
-            ? "bg-teal-600 text-white scale-105 shadow-lg"
-            : "bg-gray-100 text-teal-700 hover:bg-teal-100 hover:scale-105"
+        ${isActive
+          ? "bg-teal-600 text-white scale-105 shadow-lg"
+          : "bg-gray-100 text-teal-700 hover:bg-teal-100 hover:scale-105"
         }`}
     >
       <span className="text-lg">{icon}</span>

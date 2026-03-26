@@ -44,6 +44,12 @@ export default function HeroSection() {
           </span>
         </div>
 
+        {/* Doctor Away Notice */}
+        <div className="mb-5 flex justify-center">
+          <span className="inline-flex items-center gap-2 rounded-lg border border-red-300/40 bg-red-500/20 text-red-100 px-4 py-2 text-xs md:text-sm font-medium backdrop-blur-sm">
+            ⚠️ Our doctor will be away from March 30 to April 1. Thank you for your patience and understanding.
+          </span>
+        </div>
         {/* Headline (luxury typography + spacing) */}
         <h1 className="text-[2rem] leading-[1.15] md:text-6xl md:leading-[1.05] font-extrabold tracking-tight mb-5">
           We’re here to support{" "}
