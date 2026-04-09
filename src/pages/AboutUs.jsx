@@ -31,25 +31,26 @@ export default function AboutUs() {
         </div>
 
         <div className="space-y-6 text-base md:text-lg leading-relaxed">
-          { /* <p className="flex items-start gap-3">
+          <div className="flex items-start gap-3">
             <FaStethoscope className="text-xl text-teal-600 mt-1" />
-            At Greenwich Medical Clinic, your health comes first. We provide
-            comprehensive medical care — from routine check-ups to chronic
-            condition management — with a focus on compassion and personalized
-            attention.
-          </p> */ } 
-          <p className="flex items-start gap-3">
-  <FaStethoscope className="text-xl text-teal-600 mt-1" />
-  <span>
-    At Greenwich Medical Clinic, your health comes first. We provide comprehensive medical care — from routine check-ups to chronic condition management — with a focus on compassion and personalized attention. <br />
-    As part of the <span className="font-semibold text-teal-700">Calgary Foothills Primary Care Network (PCN)</span>, we collaborate with a team of health professionals including doctors, nurses, pharmacists, dietitians, and social workers to provide coordinated, comprehensive care.
-    <ul className="list-disc list-inside mt-2 text-gray-700">
-      <li>Access to mental health counselling and chronic disease support</li>
-      <li>Health workshops and wellness programs</li>
-      <li>Team-based, patient-centred primary care services</li>
-    </ul>
-  </span>
-</p>
+
+            <div>
+              <p>
+                At Greenwich Medical Clinic, your health comes first. We provide comprehensive medical care — from routine check-ups to chronic condition management — with a focus on compassion and personalized attention. <br />
+                As part of the{" "}
+                <span className="font-semibold text-teal-700">
+                  Calgary Foothills Primary Care Network (PCN)
+                </span>
+                , we collaborate with a team of health professionals including doctors, nurses, pharmacists, dietitians, and social workers to provide coordinated, comprehensive care.
+              </p>
+
+              <ul className="list-disc list-inside mt-2 text-gray-700">
+                <li>Access to mental health counselling and chronic disease support</li>
+                <li>Health workshops and wellness programs</li>
+                <li>Team-based, patient-centred primary care services</li>
+              </ul>
+            </div>
+          </div>
 
           <p className="flex items-start gap-3">
             <FaBriefcaseMedical className="text-xl text-teal-600 mt-1" />
@@ -61,7 +62,7 @@ export default function AboutUs() {
             To make your experience seamless, our in-house pharmacy offers
             prescription services and convenient delivery — all under one roof.
           </p>
-          
+
         </div>
       </section>
 

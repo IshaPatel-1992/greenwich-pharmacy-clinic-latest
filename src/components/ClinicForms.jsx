@@ -94,12 +94,6 @@ export default function ClinicForms() {
             onClick={() => setActiveTab("vaccination")}
           /> */ }
         </div>
-
-        {/* Doctor Availability Notice */}
-        <div className="mb-6 rounded-xl border border-yellow-300 bg-yellow-50 text-yellow-900 px-5 py-4 text-sm md:text-base text-center shadow-sm">
-          <strong>Please Note:</strong> Our physician will be unavailable from <strong>March 30 to April 1</strong>.
-          We kindly recommend booking appointments outside these dates. Pharmacy services remain available.
-        </div>
         {/* Form Panels */}
         <div className="bg-white shadow-lg rounded-2xl p-8 space-y-6">
           {/* Patient Registration */}
