@@ -174,7 +174,7 @@ export default function MedicalServicesPage() {
   </script>
 </Helmet>
 {/* Intro Section */}
-      <section className="py-20 px-6 bg-white text-gray-700 max-w-4xl mx-auto" data-aos="fade-up">
+      <section className="pt-24 py-20 px-6 bg-white text-gray-700 max-w-4xl mx-auto" data-aos="fade-up">
         <div className="inline-block mb-6 relative">
           <h2 className="text-4xl font-extrabold text-teal-800 relative z-10">
             Medical Services

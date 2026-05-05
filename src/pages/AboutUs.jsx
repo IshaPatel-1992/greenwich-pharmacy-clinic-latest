@@ -20,7 +20,7 @@ export default function AboutUs() {
       {/* About Section */}
       <section
         id="aboutuspg"
-        className="py-20 px-6 bg-white text-gray-700 max-w-4xl mx-auto scroll-mt-28"
+        className="pt-24 py-20 px-6 bg-white text-gray-700 max-w-4xl mx-auto scroll-mt-28"
         data-aos="fade-up"
       >
         <div className="inline-block mb-6 relative">

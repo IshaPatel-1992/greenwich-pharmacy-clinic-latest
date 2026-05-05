@@ -153,7 +153,7 @@ export default function PharmacyServicesPage() {
   </script>
 </Helmet>
 
-      <section className="py-20 px-6 bg-white text-gray-700 max-w-4xl mx-auto" data-aos="fade-up">
+      <section className="pt-24 py-20 px-6 bg-white text-gray-700 max-w-4xl mx-auto" data-aos="fade-up">
         <div className="inline-block mb-6 relative">
           <h2 className="text-4xl font-extrabold text-teal-800 relative z-10">Pharmacy Services</h2>
           <div className="absolute w-20 h-1 bg-teal-600 bottom-0 left-0 rounded"></div>
