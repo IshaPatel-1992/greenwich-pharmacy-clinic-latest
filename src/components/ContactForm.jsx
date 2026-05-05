@@ -96,16 +96,29 @@ export default function ContactForm() {
           </div>
 
 
-          {/* ✅ Holiday Closure Banner 
-          <div className="max-w-3xl mx-auto mb-16">
+          {/* ✅ Holiday + Doctor Notice Banner */}
+          <div className="max-w-3xl mx-auto mb-12">
             <div className="rounded-xl border border-white/30 bg-yellow-400 backdrop-blur px-6 py-4 text-teal-900 shadow-lg">
-              <div className="font-bold text-lg">Holiday Closure Notice</div>
-              <p className="mt-1 text-teal-900">
-                We will be <span className="font-semibold">closed Monday, February 16, 2026</span> for{" "}
-                <span className="font-semibold">Family Day</span>. Regular hours resume Tuesday.
-              </p>
+
+              <div className="font-bold text-lg mb-2">
+                Important Clinic & Pharmacy Notice
+              </div>
+
+              <div className="space-y-1 text-sm md:text-base">
+                <p>
+                  Doctor will be unavailable from{" "}
+                  <span className="font-semibold">May 15 to May 20, 2026</span>.
+                </p>
+
+                <p>
+                  Pharmacy will be{" "}
+                  <span className="font-semibold">closed Monday, May 18, 2026</span>{" "}
+                  for <span className="font-semibold">Victoria Day</span>.
+                </p>
+              </div>
+
             </div>
-          </div> */}
+          </div>
 
           {/* Address Section */}
           <div className="mb-16 bg-white rounded-xl shadow-lg p-8 text-center md:text-left">
@@ -153,7 +166,6 @@ export default function ContactForm() {
                 Saturday, Sunday & Statutory Holidays: Closed
               </p>
             </div>
-
             {/* Pharmacy Info */}
             <div className="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transition">
               <div className="flex items-center gap-3 mb-4">
