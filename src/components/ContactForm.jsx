@@ -111,7 +111,7 @@ export default function ContactForm() {
                 </p>
 
                 <p>
-                  Pharmacy will be{" "}
+                  Clinic & Pharmacy both will be{" "}
                   <span className="font-semibold">closed Monday, May 18, 2026</span>{" "}
                   for <span className="font-semibold">Victoria Day</span>.
                 </p>
