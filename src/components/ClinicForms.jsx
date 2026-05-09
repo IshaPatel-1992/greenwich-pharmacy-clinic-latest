@@ -72,7 +72,7 @@ export default function ClinicForms() {
           /> */ }
 
           <a
-            href="https://greenwichmedicalclinic.inputhealth.com/"
+            href="https://www.avaemr.ca/bookings/eda28100-b0ae-4f85-8175-efd218666a27"
             target="_blank"
             rel="noopener noreferrer"
             className={`flex items-center px-5 py-2 rounded-full transition font-medium shadow-sm bg-gray-100 text-teal-700 hover:bg-gray-200`}
@@ -102,20 +102,20 @@ export default function ClinicForms() {
               <h2 className="text-2xl font-bold text-teal-800 text-center mb-4">
                 Patient Registration
               </h2>
-              <div className="w-full h-[600px]">
-                <iframe
-                  title="Registration Form"
-                  width="100%"
-                  height="100%"
-                  src="https://forms.office.com/Pages/ResponsePage.aspx?id=ZdlrskVmiU6QDTni28A9UknxdGhB-I5Nu8x_qVls8HVUMjRJQ1QySTNOUk9MT1BBR0tMNkU5QzNHTy4u&embed=true"
-                  frameBorder="0"
-                  style={{
-                    border: "none",
-                    maxWidth: "100%",
-                    maxHeight: "100vh",
-                  }}
-                  allowFullScreen
-                ></iframe>
+
+              <div className="text-center py-10">
+                <p className="text-gray-600 mb-6">
+                  Please click below to open the patient registration form.
+                </p>
+
+                <a
+                  href="https://www.avaconnect.ca/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-full transition shadow-md"
+                >
+                  Open Patient Registration
+                </a>
               </div>
             </div>
           )}
@@ -147,7 +147,7 @@ export default function ClinicForms() {
               </h2>
               <div className="w-full h-[600px]">
                 <a
-                  href="https://greenwichmedicalclinic.inputhealth.com/"
+                  href="https://www.avaemr.ca/bookings/eda28100-b0ae-4f85-8175-efd218666a27"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`flex items-center px-5 py-2 rounded-full transition font-medium shadow-sm bg-gray-100 text-teal-700 hover:bg-gray-200`}

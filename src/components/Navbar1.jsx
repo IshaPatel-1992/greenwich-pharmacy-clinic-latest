@@ -191,7 +191,7 @@ export default function Navbar1() {
         {/* Book Appointment */}
         <div className="hidden lg:flex shrink-0 ml-2">
           <a
-            href="https://greenwichmedicalclinic.inputhealth.com/"
+            href="https://www.avaemr.ca/bookings/eda28100-b0ae-4f85-8175-efd218666a27"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-teal-700 text-white text-sm font-semibold px-4 py-2 rounded-full shadow-sm hover:bg-teal-800 transition whitespace-nowrap"
@@ -220,7 +220,7 @@ export default function Navbar1() {
               .concat([
                 {
                   label: "Book an Appointment",
-                  href: "https://greenwichmedicalclinic.inputhealth.com/",
+                  href: "https://www.avaconnect.ca/",
                   external: true,
                   isPrimary: true,
                 },
