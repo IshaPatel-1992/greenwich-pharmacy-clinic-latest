@@ -3,6 +3,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import logo from "../assets/logo/greenwich-logo.png";
 import { HashLink as Link } from "react-router-hash-link";
 
+
 const menuItems = [
   {
     label: "Medical",
@@ -116,30 +117,34 @@ export default function Navbar1() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-between items-center gap-3">
         {/* Logo */}
-        <Link to="/#home" className="flex items-center gap-3 shrink-0">
-          <img
-            src={logo}
-            alt="Greenwich Medical Clinic & Pharmacy Logo"
-            className="h-14 md:h-18 lg:h-20 w-auto rounded-xl border-2 border-teal-700 shadow-md transition duration-300 hover:scale-105"
-          />
+        <Link
+  to="/"
+  className="flex items-center gap-3 shrink-0"
+  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+>
+  <img
+    src={logo}
+    alt="Greenwich Medical Clinic & Pharmacy Logo"
+    className="h-14 md:h-18 lg:h-20 w-auto rounded-xl border-2 border-teal-700 shadow-md transition duration-300 hover:scale-105"
+  />
 
-          <div className="leading-tight">
-            <div
-              className="text-lg md:text-xl xl:text-2xl font-semibold text-teal-900 tracking-tight"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              Greenwich Medical
-              <br className="hidden xl:block" /> Clinic
-            </div>
+  <div className="leading-tight">
+    <div
+      className="text-lg md:text-xl xl:text-2xl font-semibold text-teal-900 tracking-tight"
+      style={{ fontFamily: "'Playfair Display', serif" }}
+    >
+      Greenwich Medical
+      <br className="hidden xl:block" /> Clinic
+    </div>
 
-            <div
-              className="text-sm md:text-base text-yellow-600 -mt-0.5"
-              style={{ fontFamily: "'Great Vibes', cursive" }}
-            >
-              & Pharmacy
-            </div>
-          </div>
-        </Link>
+    <div
+      className="text-sm md:text-base text-yellow-600 -mt-0.5"
+      style={{ fontFamily: "'Great Vibes', cursive" }}
+    >
+      & Pharmacy
+    </div>
+  </div>
+</Link>
 
         {/* Desktop Menu */}
         <nav className="hidden lg:flex items-center justify-end gap-1 xl:gap-2 flex-1">
